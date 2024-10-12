@@ -19,7 +19,7 @@
 
 	background-repeat: no-repeat;
 
-	color: var(--murky-water);
+	color: var(--murky-clouds);
 
 	&__wrapper {
 		width: min(100% - u.rem(40), 75%);
@@ -221,7 +221,7 @@ figcaption {
 	font-weight: bold;
 	text-align: center;
 	font-family: u.$font;
-	color: var(--lilly-green);
+	color: var(--murky-clouds);
 	margin-block: 20px;
 	box-shadow: none;
 }

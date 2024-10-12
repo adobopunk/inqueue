@@ -65,7 +65,6 @@
 			background-attachment: scroll;
 			background-repeat: repeat-y;
 		}
-	
 	}
 
 	&__featured-image {
@@ -294,12 +293,7 @@
 	text-align: center;
 }
 
-figcaption {
-	font-style: italic;
-	text-align: center;
-	font-family: u.$font;
-	color: var(--lilly-green);
-}
+
 
 .bio-accent {
 	margin: 10px auto;
