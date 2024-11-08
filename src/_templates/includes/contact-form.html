@@ -3,23 +3,23 @@
 		<!-- Two fields in one line -->
 		<div class="form-row">
 			<div class="form-group half-width">
-				<label for="name">Name</label>
+				<label for="firstname">Your First Name</label>
 				<input
 					type="text"
-					id="name"
-					name="name"
+					id="firstname"
+					name="firstname"
 					required
-					placeholder="e.g., Jane Doe"
+					placeholder="Cory"
 				/>
 			</div>
 			<div class="form-group half-width">
-				<label for="email">Email</label>
+				<label for="lastname">Your Last Name</label>
 				<input
-					type="email"
-					id="email"
-					name="email"
+					type="text"
+					id="lastname"
+					name="lastname"
 					required
-					placeholder="e.g., jane.doe@example.com"
+					placeholder="Sobon"
 				/>
 			</div>
 		</div>
@@ -27,26 +27,83 @@
 		<!-- Full-width field -->
 		<div class="form-row">
 			<div class="form-group full-width">
-				<label for="subject">Subject</label>
+				<label for="email">Your Email Address</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					required
+					placeholder="cory@tinypond.studio"
+				/>
+			</div>
+		</div>
+		<!-- Full-width field -->
+		<div class="form-row">
+			<div class="form-group full-width">
+				<label for="company">Your Business or Company Name</label>
 				<input
 					type="text"
-					id="subject"
-					name="subject"
-					required
-					placeholder="e.g., Project Inquiry"
+					id="company"
+					name="company"
+					placeholder="Big Frogs Inc."
 				/>
+			</div>
+		</div>
+
+		<!-- Dropdown for Budget -->
+		<div class="form-row">
+			<div class="form-group full-width">
+				<label for="budget">Tell us about your budget:</label>
+				<select id="budget" name="budget" required>
+					<option value="" disabled selected>
+						Select your budget
+					</option>
+					<option value="under-5000">Under $5,000</option>
+					<option value="5000-10000">$5,000 - $10,000</option>
+					<option value="10000-25000">$10,000 - $25,000</option>
+					<option value="25000-plus">Over $25,000</option>
+				</select>
 			</div>
 		</div>
 
 		<!-- Full-width taller field -->
 		<div class="form-row">
 			<div class="form-group full-width">
-				<label for="message">Message</label>
+				<label for="message">Your message</label>
 				<textarea
 					id="message"
 					name="message"
 					required
 					placeholder="Tell us about your project and how we can help!"
+				></textarea>
+			</div>
+		</div>
+		<!-- Full-width taller field -->
+		<div class="form-row">
+			<div class="form-group full-width">
+				<label for="interest"
+					>What interests you about working with Tiny
+					Pond?</label
+				>
+				<textarea
+					id="interest"
+					name="interest"
+					required
+					placeholder="This helps us understand what aspects of our studio drew you to this project, so we can better cater to your needs."
+				></textarea>
+			</div>
+		</div>
+		<!-- Full-width taller field -->
+		<div class="form-row">
+			<div class="form-group full-width">
+				<label for="discovery"
+					>How did you hear about Tiny Pond?</label
+				>
+				<textarea
+					id="discovery"
+					name="discovery"
+					required
+					placeholder="This helps us understand how we're doing. If you were referred to Tiny Pond, please let us know who referred you!"
 				></textarea>
 			</div>
 		</div>

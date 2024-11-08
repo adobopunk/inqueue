@@ -66,20 +66,6 @@ textarea {
 	resize: vertical;
 }
 
-select {
-	color: #fff; /* Text color for options */
-	cursor: pointer;
-	padding-right: u.rem(
-		40
-	); /* Add extra right padding to make room for the arrow */
-	appearance: none; /* Remove default arrow */
-	background: url('data:image/svg+xml;utf8,<svg width="10" height="5" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,0 5,5" fill="white"/></svg>')
-		no-repeat right u.rem(20); /* Custom arrow with padding */
-	background-color: var(
-		--dark-blue-fog
-	); /* Same background as other inputs */
-}
-
 /* Apply outline to all text inputs (inputs, textareas, and select) only when focused */
 input:focus,
 textarea:focus,
