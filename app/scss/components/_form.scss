@@ -1,0 +1,104 @@
+@use '../util' as u;
+
+.form-container {
+	padding: 20px;
+	width: 100%;
+	max-width: 900px; /* Maximum width of the form */
+	margin: 0 auto; /* Center the form container */
+	margin-block-end: u.rem(80);
+
+	@include u.breakpoint(large) {
+		max-width: 50vw;
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: u.rem(40); /* Space between form rows */
+	width: 100%;
+}
+
+.form-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: u.rem(16); /* Space between inputs in a row */
+	width: 100%;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.half-width {
+	flex: 1 1 48%; /* Two inputs side by side, each taking about half width */
+}
+
+.full-width {
+	width: 100%; /* Full-width input */
+}
+
+label {
+	font-size: u.rem(16);
+	color: var(--text-color); /* Adjust to match your theme */
+	font-weight: bold;
+	margin-bottom: u.rem(10);
+}
+
+input,
+textarea,
+select {
+	font-family: u.$font;
+	padding: u.rem(12) u.rem(20); /* Add padding to the left and right */
+	border-radius: 10px;
+	font-size: u.rem(18);
+	width: 100%;
+	background-color: var(--dark-blue-fog);
+	outline: none;
+	border: none;
+	line-height: 1.6;
+}
+
+textarea {
+	height: 200px; /* Set taller height for text area */
+	resize: vertical;
+}
+
+select {
+	color: #fff; /* Text color for options */
+	cursor: pointer;
+	padding-right: u.rem(
+		40
+	); /* Add extra right padding to make room for the arrow */
+	appearance: none; /* Remove default arrow */
+	background: url('data:image/svg+xml;utf8,<svg width="10" height="5" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,0 5,5" fill="white"/></svg>')
+		no-repeat right u.rem(20); /* Custom arrow with padding */
+	background-color: var(
+		--dark-blue-fog
+	); /* Same background as other inputs */
+}
+
+/* Apply outline to all text inputs (inputs, textareas, and select) only when focused */
+input:focus,
+textarea:focus,
+select:focus {
+	outline: 4px solid var(--lilly-green); /* Solid outline on focus */
+	box-shadow: 0 0 5px var(--lilly-green);
+}
+
+/* Media Query for Small Screens */
+@include u.breakpoint-down(small) {
+	.form-container {
+		padding: 10px;
+	}
+
+	.form-row {
+		flex-direction: column; /* Stack all fields vertically */
+	}
+
+	.half-width {
+		width: 100%; /* Make half-width fields full-width on small screens */
+	}
+}

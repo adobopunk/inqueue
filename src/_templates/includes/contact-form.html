@@ -1,0 +1,56 @@
+<div class="form-container">
+	<form name="contact" method="POST" data-netlify="true">
+		<!-- Two fields in one line -->
+		<div class="form-row">
+			<div class="form-group half-width">
+				<label for="name">Name</label>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					required
+					placeholder="e.g., Jane Doe"
+				/>
+			</div>
+			<div class="form-group half-width">
+				<label for="email">Email</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					required
+					placeholder="e.g., jane.doe@example.com"
+				/>
+			</div>
+		</div>
+
+		<!-- Full-width field -->
+		<div class="form-row">
+			<div class="form-group full-width">
+				<label for="subject">Subject</label>
+				<input
+					type="text"
+					id="subject"
+					name="subject"
+					required
+					placeholder="e.g., Project Inquiry"
+				/>
+			</div>
+		</div>
+
+		<!-- Full-width taller field -->
+		<div class="form-row">
+			<div class="form-group full-width">
+				<label for="message">Message</label>
+				<textarea
+					id="message"
+					name="message"
+					required
+					placeholder="Tell us about your project and how we can help!"
+				></textarea>
+			</div>
+		</div>
+
+		<button class="button tertiary" type="submit">Send Message</button>
+	</form>
+</div>
