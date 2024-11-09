@@ -12,26 +12,6 @@ function isMobileDevice() {
 	return window.innerWidth <= 900; // You can adjust this threshold as needed
 }
 
-//fade-in video
-function setupReelVideoFadeIn() {
-	const reelVideos = selectAll('.reel__video');
-
-	debug(`Found ${reelVideos.length} reel videos`);
-
-	reelVideos.forEach((video) => (video.style.opacity = 0));
-
-	function fadeInReelVideos() {
-		reelVideos.forEach((video) => {
-			video.style.animation = 'fadein 1.0s both';
-		});
-	}
-
-	return fadeInReelVideos;
-}
-
-const fadeInReelVideos = setupReelVideoFadeIn();
-fadeInReelVideos();
-
 // Fade-in animations
 function setupFadeInAnimations() {
 	const animatedTags = selectAll(
@@ -47,28 +27,19 @@ function setupFadeInAnimations() {
 		animatedTags.forEach((tag) => {
 			const tagTop = tag.getBoundingClientRect().top;
 			const tagBottom = tag.getBoundingClientRect().bottom;
-			if (tagTop < window.innerHeight - 25 && tagBottom > 0) {
-				tag.style.animation = `fadein 0.75s ease-out ${delay}s both`;
-				delay += 0.05;
-			} else {
-				tag.style.opacity = 0;
-				tag.style.animation = '';
+			if (
+				tagTop < window.innerHeight - 25 &&
+				tagBottom > 0 &&
+				tag.style.opacity == 0
+			) {
+				tag.style.animation = `fadein 0.5s ease-out ${delay}s both`;
+				delay += 0.04;
 			}
 		});
 	}
 
 	return fadeIn;
 }
-
-//add delay on video drop shadow
-
-document.addEventListener('DOMContentLoaded', function () {
-	const video = document.querySelector('.reel__video');
-
-	setTimeout(() => {
-		video.classList.add('loaded');
-	}, 250);
-});
 
 // Accent animations
 function setupAccentAnimations() {
