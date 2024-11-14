@@ -8,9 +8,16 @@
 		/>
 		<meta name="color-scheme" content="dark" />
 
-		<title>{{ title }}</title>
+		<title>
+			{% if page.url == "/" %}{{ title }} | {{ description }}{% else
+			%}{{ title }} | Tiny Pond: an Independent, Worker-Owned Creative
+			Agency{% endif %}
+		</title>
 
-		<meta name="description" content="{{ description  }}" />
+		<meta
+			name="description"
+			content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}"
+		/>
 
 		<meta property="og:title" content="{{ title }}" />
 		<meta property="og:description" content="{{ description }}" />
