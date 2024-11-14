@@ -3,13 +3,11 @@
 .form-container {
 	padding: 20px;
 	width: 100%;
-	max-width: 900px; /* Maximum width of the form */
+	width: clamp(100%, 85vw, 900px);
+	max-width: 100%; /* Maximum width of the form */
+
 	margin: 0 auto; /* Center the form container */
 	margin-block-end: u.rem(80);
-
-	@include u.breakpoint(large) {
-		max-width: 50vw;
-	}
 }
 
 form {
