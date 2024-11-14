@@ -136,15 +136,14 @@
 		height: 100vh;
 		object-fit: cover;
 
-		@include u.breakpoint-down(small) {
-			height: 50vh;
-		}
+		// @include u.breakpoint-down(small) {
+		// 	height: 50vh;
+		// }
 	}
 
 	&__2x video {
 		flex: 1 1 50%;
 		width: 100%;
-		height: 100vh;
 		object-fit: cover;
 	}
 
@@ -155,7 +154,7 @@
 
 		@include u.breakpoint-down(medium) {
 			width: 100vw;
-			height: 50vh;
+			height: 100vh;
 		}
 	}
 
