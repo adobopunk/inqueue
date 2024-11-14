@@ -1,60 +1,17 @@
 <div class="projects-directory" id="work">
-	<div class="preview" id="reunion">
+	{% for project in collections.projects %}
+	<div class="preview" id="{{ project.fileSlug }}">
 		<div class="preview__text wrapper">
-			<h2 class="preview__header">Fortnite Reunion</h2>
+			<h2 class="preview__header">{{ project.data.title }}</h2>
 			<div class="preview__subheader">
 				<p class="preview__description small">
-					The OG Battle Royale map makes a spectacular return in
-					our collaboration with Epic Games.
+					{{ project.data.description }}
 				</p>
-				<a href="/projects/reunion" class="button secondary"
+				<a href="{{ project.url | url }}" class="button secondary"
 					>See the Project</a
 				>
 			</div>
 		</div>
 	</div>
-	<div class="preview" id="porsche">
-		<div class="preview__text wrapper">
-			<h2 class="preview__header">Porsche 911 Turbo</h2>
-			<div class="preview__subheader">
-				<p class="preview__description small">
-					Debuting the Porsche x Rocket League collaboration with
-					a friendly tournament.
-				</p>
-				<a href="/projects/porsche911" class="button secondary"
-					>See the Project</a
-				>
-			</div>
-		</div>
-	</div>
-
-	<div class="preview" id="valorant-select">
-		<div class="preview__text wrapper">
-			<h2 class="preview__header">Valorant: Select</h2>
-			<div class="preview__subheader">
-				<p class="preview__description small">
-					A unique Valorant tournament requires unique broadcast
-					solutions.
-				</p>
-				<a href="/projects/valorant-select" class="button secondary"
-					>See the Project</a
-				>
-			</div>
-		</div>
-	</div>
-
-	<div class="preview" id="proving-grounds">
-		<div class="preview__text wrapper">
-			<h2 class="preview__header">Proving Grounds</h2>
-			<div class="preview__subheader">
-				<p class="preview__description small">
-					A classic community tournament series gets a visionary
-					makeover for the future.
-				</p>
-				<a href="/projects/proving-grounds" class="button secondary"
-					>See the Project</a
-				>
-			</div>
-		</div>
-	</div>
+	{% endfor %}
 </div>
