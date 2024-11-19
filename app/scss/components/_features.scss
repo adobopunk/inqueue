@@ -72,7 +72,9 @@
 	}
 
 	&__text-fullwidth {
-		margin-top: 10vh;
+		@include u.breakpoint(large) {
+			margin-top: 10vh;
+		}
 	}
 
 	&__text-fullwidth h3 {
@@ -115,7 +117,7 @@
 			justify-content: center;
 			align-items: center;
 			min-height: 50vh;
-			background-attachment: scroll;
+			// background-attachment: scroll;
 		}
 	}
 
@@ -133,18 +135,23 @@
 
 	&__image {
 		flex: 1;
-		height: 100vh;
 		object-fit: cover;
+		height: 100%;
 
-		// @include u.breakpoint-down(small) {
-		// 	height: 50vh;
-		// }
+		@include u.breakpoint-down(small) {
+			height: 50vh;
+		}
 	}
 
 	&__2x video {
-		flex: 1 1 50%;
-		width: 100%;
+		width: 50vw;
+		height: 100vh;
 		object-fit: cover;
+		overflow-x: hidden;
+
+		@include u.breakpoint-down(medium) {
+			width: 100vw;
+		}
 	}
 
 	&__image img {
