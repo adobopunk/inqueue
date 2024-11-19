@@ -110,14 +110,14 @@
 		background-size: cover;
 		background-position: center center;
 		padding-inline: 10vw;
-		padding-block: 10vh;
+		padding-block: 50px;
 		// overflow: hidden;
 
 		@include u.breakpoint-down(medium) {
-			justify-content: center;
+			justify-content: flex-end;
 			align-items: center;
 			min-height: 50vh;
-			// background-attachment: scroll;
+			background-attachment: scroll;
 		}
 	}
 

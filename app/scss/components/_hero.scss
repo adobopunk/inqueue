@@ -19,7 +19,7 @@
 	}
 
 	&__text {
-		float: left;
+		// float: left;
 		@include u.breakpoint(large) {
 			// flex: 6;
 		}
@@ -46,8 +46,8 @@
 		font-size: clamp(4.5rem, 4.1rem + 2vw, 6.5rem);
 
 		@include u.breakpoint-down(small) {
-			font-size: 2.5rem;
-			font-size: clamp(2.5rem, 2.2rem + 1.5vw, 4rem);
+			font-size: 2rem;
+			font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
 		}
 
 		&:hover {
