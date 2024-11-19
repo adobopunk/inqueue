@@ -36,6 +36,7 @@
 		font-size: clamp(4rem, 3.6rem + 2vw, 6rem);
 
 		@include u.breakpoint-down(small) {
+			font-size: 2rem;
 			text-align: center;
 		}
 	}
