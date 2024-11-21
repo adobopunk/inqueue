@@ -12,10 +12,10 @@
 		gap: 40px;
 		padding-top: u.rem(20);
 
-		@include u.breakpoint-down(small) {
-			text-align: center;
-			align-items: center;
-		}
+		// @include u.breakpoint-down(small) {
+		// 	text-align: center;
+		// 	align-items: center;
+		// }
 	}
 
 	&__text {
@@ -26,13 +26,12 @@
 	}
 
 	&__content {
-		max-width: 35ch; /* max 50 characters per line */
 		overflow-wrap: break-word;
 		transition: text-shadow 0.5s;
 		text-shadow: 0 0 0 transparent;
 
-		@include u.breakpoint-down(small) {
-			max-width: 20ch;
+		@include u.breakpoint(medium) {
+			max-width: 35ch; /* max 50 characters per line */
 		}
 	}
 
@@ -48,6 +47,10 @@
 		@include u.breakpoint-down(small) {
 			font-size: 2rem;
 			font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+			font-size: 3.4rem;
+			font-size: clamp(3.4rem, 3.24rem + 0.8vw, 4.2rem);
+			max-width: 10ch;
+			white-space: wrap;
 		}
 
 		&:hover {
