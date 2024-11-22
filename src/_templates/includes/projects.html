@@ -1,17 +1,35 @@
 <div class="projects-directory" id="work">
-	{% for project in collections.projects %}
-	<div class="preview" id="{{ project.fileSlug }}">
-		<div class="preview__text wrapper">
-			<h2 class="preview__header">{{ project.data.title }}</h2>
-			<div class="preview__subheader">
-				<p class="preview__description small">
+	{% for project in collections.featured %}
+	<a
+		href="{{ project.url | url }}"
+		class="project-link"
+		id="{{ project.fileSlug }}"
+	>
+		<div class="project-preview">
+			<div class="project-video">
+				<iframe
+					src="https://player.vimeo.com/video/{{ project.data.videoID }}?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&controls=0"
+					frameborder="0"
+					allow="autoplay; fullscreen"
+					allowfullscreen
+				>
+				</iframe>
+				<!-- {% if project.data.videoFile %}
+				<video autoplay loop muted playsinline>
+				  <source src="{{ project.data.videoFile }}" type="video/mp4" />
+				  Your browser does not support the video tag.
+				</video>
+			  {% else %}
+				<img src="/path/to/placeholder-image.jpg" alt="Video placeholder" />
+			  {% endif %} -->
+			</div>
+			<div class="project-info">
+				<h2 class="project-title">{{ project.data.title }}</h2>
+				<p class="project-description">
 					{{ project.data.description }}
 				</p>
-				<a href="{{ project.url | url }}" class="button secondary"
-					>See the Project</a
-				>
 			</div>
 		</div>
-	</div>
+	</a>
 	{% endfor %}
 </div>

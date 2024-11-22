@@ -1,109 +1,117 @@
 @use '../util' as u;
 
-.preview {
-	height: 50vh;
-	padding-block: 10vh;
-	background-position: center center;
-	background-repeat: no-repeat;
+.projects-directory {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	padding: 2rem;
+	padding-block: u.rem(100);
+
+	background-color: var(--background-color);
+	background-image: url(/img/backgrounds/tinyPondText.png);
+	background-position: center;
+	background-size: 300vh;
 	background-attachment: fixed;
-	background-size: cover;
-	z-index: 100;
+
+	background-repeat: no-repeat;
+}
+
+/* Individual project block */
+.project-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-link:hover {
 	position: relative;
+	transform: translateY(-4px);
+	color: inherit;
+	text-shadow: none;
+}
 
-	@include u.breakpoint-down(medium) {
-		background-attachment: scroll;
+/* Layout for the project preview */
+.project-preview {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	@include u.breakpoint(large) {
+		flex-direction: row-reverse;
+		text-align: right;
+		align-items: flex-start;
+		gap: 2rem;
 	}
+}
 
-	&__text {
-		z-index: 200;
+/* Apply column direction to even items */
+.project-link:nth-child(odd) {
+	.project-preview {
 		display: flex;
 		flex-direction: column;
-		// justify-content: space-between;
+		text-align: left;
 
-		@include u.breakpoint-down(small) {
-			align-items: center;
-		}
-	}
-
-	&__subheader {
-		z-index: 200;
-	}
-
-	&__header {
-		z-index: 200;
-
-		font-size: 4rem;
-		font-size: clamp(4rem, 3.6rem + 2vw, 6rem);
-
-		@include u.breakpoint-down(small) {
-			font-size: 2rem;
-			text-align: center;
-		}
-	}
-
-	&__description {
-		z-index: 200;
-		max-width: 50ch;
-		word-wrap: break-word;
-		white-space: normal;
-		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
-		@include u.breakpoint-down(small) {
-			text-align: center;
+		@include u.breakpoint(large) {
+			flex-direction: column; /* Ensure column direction for even items */
 		}
 	}
 }
 
-.preview {
-	position: relative; /* Ensure the parent has a position for absolute children */
+/* Apply row-reverse direction to every other even item (2nd, 6th, 10th, etc.) */
+.project-link:nth-child(4n + 2) {
+	.project-preview {
+		display: flex;
+		flex-direction: row;
+		text-align: left;
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
+		@include u.breakpoint(large) {
+			flex-direction: row; /* Ensure row-reverse for every other even item */
+		}
+	}
+}
+
+/* Video container with responsive aspect ratio */
+.project-video {
+	position: relative;
+	width: 66.67%; /* Set the video container to 2/3 of the flex container */
+	aspect-ratio: 16 / 9; /* Ensures a 16:9 aspect ratio */
+	overflow: hidden;
+
+	@include u.breakpoint-down(medium) {
 		width: 100%;
-		height: 100%;
-		background-color: rgba(4, 41, 42, 0.229);
-		z-index: 0;
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%; /* Cover the entire section */
-		height: 100%; /* Cover the entire section */
-		background: linear-gradient(
-			to bottom right,
-			hsla(194, 100%, 12%, 0.855),
-			10%,
-			hsla(194, 100%, 12%, 0.728) 15%,
-			rgba(4, 41, 42, 0) 75%
-		); /* Smooth gradient */
-		z-index: 1; /* Ensure this overlay is above the main overlay */
 	}
 }
 
-.preview__subheader .secondary {
-	@include u.breakpoint-down(small) {
-		text-align: center;
-		margin: 0 auto;
-		display: block;
+.project-link:nth-child(odd) .project-video {
+	width: 100%; /* Set width to 100% for every even item */
+}
+
+.project-video iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+	pointer-events: none; /* Pass clicks through the iframe to the parent link */
+}
+
+/* Text container */
+.project-info {
+	position: relative;
+	flex: 1;
+	padding: 1rem;
+
+	@include u.breakpoint(large) {
+		margin-block-start: 10px;
 	}
-}
 
-#reunion {
-	background-image: url(/img/backgrounds/reunion-bg.webp);
-}
-
-#porsche911 {
-	background-image: url(/img/projects/porsche-911/screencaps/porsche-bg.webp);
-}
-#valorant-select {
-	background-image: url(/img/projects/valorant-select/select-bg.png);
-}
-#proving-grounds {
-	background-image: url(/img/projects/proving-grounds/pg-bg.webp);
+	&:hover {
+		text-decoration: underline;
+		text-decoration-thickness: 4px;
+		text-decoration-color: var(--lilly-green); // Use custom green color
+		text-decoration-style: dotted;
+		text-underline-offset: 8px;
+	}
 }

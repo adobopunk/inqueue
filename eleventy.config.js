@@ -5,9 +5,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('app');
 	eleventyConfig.addPassthroughCopy('src/robots.txt');
 
-	eleventyConfig.addCollection('projects', function (collectionApi) {
+	eleventyConfig.addCollection('featured', function (collectionApi) {
 		return collectionApi
-			.getFilteredByGlob('src/projects/*.html')
+			.getFilteredByGlob('src/featured/*.html')
 			.sort((a, b) => {
 				const orderA =
 					a.data.order !== undefined ? a.data.order : Infinity;
