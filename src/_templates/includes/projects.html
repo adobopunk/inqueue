@@ -7,21 +7,14 @@
 	>
 		<div class="project-preview">
 			<div class="project-video">
-				<iframe
-					src="https://player.vimeo.com/video/{{ project.data.videoID }}?autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&controls=0"
-					frameborder="0"
-					allow="autoplay; fullscreen"
-					allowfullscreen
-				>
-				</iframe>
-				<!-- {% if project.data.videoFile %}
-				<video autoplay loop muted playsinline>
-				  <source src="{{ project.data.videoFile }}" type="video/mp4" />
-				  Your browser does not support the video tag.
-				</video>
-			  {% else %}
-				<img src="/path/to/placeholder-image.jpg" alt="Video placeholder" />
-			  {% endif %} -->
+				<video
+					src="{{ project.data.videoPath }}"
+					autoplay
+					loop
+					muted
+					playsinline
+					class="project-video-element"
+				></video>
 			</div>
 			<div class="project-info">
 				<h2 class="project-title">{{ project.data.title }}</h2>

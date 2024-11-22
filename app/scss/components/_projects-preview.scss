@@ -12,11 +12,9 @@
 	background-position: center;
 	background-size: 300vh;
 	background-attachment: fixed;
-
 	background-repeat: no-repeat;
 }
 
-/* Individual project block */
 .project-link {
 	display: block;
 	text-decoration: none;
@@ -33,7 +31,6 @@
 	text-shadow: none;
 }
 
-/* Layout for the project preview */
 .project-preview {
 	display: flex;
 	flex-direction: column;
@@ -47,38 +44,41 @@
 	}
 }
 
-/* Apply column direction to even items */
-.project-link:nth-child(odd) {
-	.project-preview {
-		display: flex;
+.project-link:nth-child(odd) .project-preview {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+
+	@include u.breakpoint(large) {
 		flex-direction: column;
-		text-align: left;
-
-		@include u.breakpoint(large) {
-			flex-direction: column; /* Ensure column direction for even items */
-		}
 	}
 }
 
-/* Apply row-reverse direction to every other even item (2nd, 6th, 10th, etc.) */
-.project-link:nth-child(4n + 2) {
-	.project-preview {
-		display: flex;
+.project-link:nth-child(4n + 2) .project-preview {
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+
+	@include u.breakpoint(large) {
 		flex-direction: row;
-		text-align: left;
+	}
 
-		@include u.breakpoint(large) {
-			flex-direction: row; /* Ensure row-reverse for every other even item */
-		}
+	@include u.breakpoint-down(small) {
+		flex-direction: column;
 	}
 }
 
-/* Video container with responsive aspect ratio */
 .project-video {
 	position: relative;
-	width: 66.67%; /* Set the video container to 2/3 of the flex container */
-	aspect-ratio: 16 / 9; /* Ensures a 16:9 aspect ratio */
+	width: 66.67%;
+	aspect-ratio: 16 / 9;
 	overflow: hidden;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.1
+	); /* Placeholder background while video loads */
 
 	@include u.breakpoint-down(medium) {
 		width: 100%;
@@ -86,18 +86,19 @@
 }
 
 .project-link:nth-child(odd) .project-video {
-	width: 100%; /* Set width to 100% for every even item */
+	width: 100%;
 }
 
-.project-video iframe {
+.project-video-element {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	border: none;
+	object-fit: cover;
 	display: block;
-	pointer-events: none; /* Pass clicks through the iframe to the parent link */
 }
 
-/* Text container */
 .project-info {
 	position: relative;
 	flex: 1;
@@ -110,7 +111,7 @@
 	&:hover {
 		text-decoration: underline;
 		text-decoration-thickness: 4px;
-		text-decoration-color: var(--lilly-green); // Use custom green color
+		text-decoration-color: var(--lilly-green);
 		text-decoration-style: dotted;
 		text-underline-offset: 8px;
 	}
