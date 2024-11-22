@@ -13,13 +13,16 @@
 	background-size: 300vh;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+
+	@include u.breakpoint-down(small) {
+		padding: 0;
+	}
 }
 
 .project-link {
 	display: block;
 	text-decoration: none;
 	color: inherit;
-	border-radius: 8px;
 	overflow: hidden;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
