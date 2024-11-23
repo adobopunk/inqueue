@@ -1,52 +1,58 @@
 @use '../util' as u;
 
-.project-main {
-	min-height: 100vh;
-}
+// .project-main {
+// 	min-height: 100vh;
+// }
 
-.project-container {
-	margin: 0 auto;
-	padding: 2rem;
-	max-width: var(--max-width, 1200px);
-}
+// .project-container {
+// 	margin: 0 auto;
+// 	padding: 2rem;
+// 	max-width: var(--max-width, 1200px);
+// }
 
-.project-content {
-	margin-bottom: 4rem;
-}
+// .project-content {
+// 	margin-bottom: 4rem;
+// }
 
-.project-loader {
-	height: 60px;
-	margin: 2rem 0;
-	text-align: center;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
+// .project-loader {
+// 	height: 60px;
+// 	padding: 2rem 0;
+// 	text-align: center;
+// 	// opacity: 0;
+// 	transition: opacity 0.3s ease;
 
-.project-loader.loading {
-	opacity: 1;
-}
+// 	background-color: var(--background-color);
+// 	background-image: url(/img/backgrounds/tinyPondText.png);
+// 	background-position: center;
+// 	background-size: 300vh;
+// 	background-attachment: fixed;
+// }
 
-.loading-indicator {
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	border: 3px solid #eee;
-	border-top-color: #333;
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-}
+// .project-loader.loading {
+// 	opacity: 1;
+// }
 
-@keyframes spin {
-	to {
-		transform: rotate(360deg);
-	}
-}
+// .loading-indicator {
+// 	display: inline-block;
+// 	width: 30px;
+// 	height: 30px;
+// 	border: 3px solid #eee;
+// 	border-top-color: #333;
+// 	border-radius: 50%;
+// 	animation: spin 1s linear infinite;
+// }
 
-.project-container {
-	opacity: 1;
-	transition: opacity 0.3s ease;
-}
+// @keyframes spin {
+// 	to {
+// 		transform: rotate(360deg);
+// 	}
+// }
 
-.project-container.loading {
-	opacity: 0.6;
-}
+// .project-container {
+	// opacity: 1;
+// 	transition: opacity 0.3s ease;
+// }
+
+// .project-container.loading {
+// 	opacity: 0.6;
+// }
