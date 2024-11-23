@@ -1,5 +1,6 @@
 <div class="projects-directory" id="work">
-	{% for project in collections.featured %}
+	{% for project in collections.projects %} {% if project.data.featured ==
+	"yes" %}
 	<a
 		href="{{ project.url | url }}"
 		class="project-link"
@@ -21,6 +22,29 @@
 				<p class="project-description">
 					{{ project.data.description }}
 				</p>
+			</div>
+		</div>
+	</a>
+	{% endif %} {% endfor %}
+</div>
+
+<!-- second gallery -->
+
+<div class="other-projects-directory" id="other-work">
+	{% for project in collections.nonFeaturedProjects %}
+	<a
+		href="{{ project.url | url }}"
+		class="project-link"
+		id="{{ project.fileSlug }}"
+	>
+		<div class="project-preview">
+			<div class="project-image">
+				<img
+					src="{{ project.data.imagePath }}"
+					alt="{{ project.data.title }}"
+					loading="lazy"
+					class="project-image-element"
+				/>
 			</div>
 		</div>
 	</a>

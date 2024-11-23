@@ -1,0 +1,38 @@
+@use '../util' as u;
+
+.other-projects-directory {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Defines a two-column layout */
+	gap: 2rem;
+	padding: 2rem;
+
+	background-color: var(--background-color);
+	background-image: url(/img/backgrounds/tinyPondText.png);
+	background-position: center;
+	background-size: 300vh;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
+	@include u.breakpoint-down(medium) {
+		grid-template-columns: 1fr;
+	}
+
+	@include u.breakpoint-down(small) {
+		padding: 0;
+	}
+}
+
+.project-preview-secondary {
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-preview-secondary:hover {
+	transform: translateY(-4px);
+}
+
+.project-image-element {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
