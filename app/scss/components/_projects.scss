@@ -4,7 +4,7 @@
 	overflow-x: hidden;
 	width: 100vw;
 	min-height: 100vh;
-	padding-top: 10vh;
+	padding-top: u.rem(120);
 	background-color: var(--background-color);
 	background-image: url(/img/backgrounds/tinyPondText.png);
 	background-position: center;
@@ -22,12 +22,12 @@
 	color: var(--murky-clouds);
 
 	&__wrapper {
-		width: min(100% - u.rem(40), 75%);
+		// width: min(100% - u.rem(40), 75%);
 		min-height: 100vh;
 
-		@include u.breakpoint-down(large) {
-			width: min(100% - u.rem(0), 90%);
-		}
+		// @include u.breakpoint-down(large) {
+		// 	width: min(100% - u.rem(0), 90%);
+		// }
 
 		& p {
 			font-family: u.$font;
@@ -35,6 +35,18 @@
 			line-height: 1.75;
 			font-style: normal;
 			margin-block: u.rem(40);
+
+			@include u.breakpoint-down(small) {
+				margin-block: u.rem(10);
+			}
+		}
+
+		& h2 {
+			margin-block: u.rem(40);
+
+			@include u.breakpoint-down(small) {
+				margin-block: u.rem(10);
+			}
 		}
 	}
 
@@ -100,7 +112,7 @@
 		grid-auto-flow: column;
 		column-gap: 10vw;
 
-		@include u.breakpoint-down(small) {
+		@include u.breakpoint-down(medium) {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -114,7 +126,6 @@
 		max-width: 1600px;
 		display: block;
 		text-align: center;
-		border-radius: 2px;
 		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
 		margin: 25px auto;
 	}
@@ -125,7 +136,6 @@
 		display: block;
 		margin: 15px auto;
 		text-align: center;
-		border-radius: 10px;
 		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
 
 		@include u.breakpoint-down(large) {
@@ -138,7 +148,6 @@
 		display: block;
 		text-align: center;
 		border: 4px solid var(--lilly-green);
-		border-radius: 10px;
 		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
 		max-width: 600px;
 		margin: 10px auto;
@@ -150,7 +159,6 @@
 		overflow: hidden;
 		max-width: 100%;
 		background: #000; /* Optional: Background color while loading */
-		border-radius: 10px; /* Optional: Rounds the corners */
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
 		margin-bottom: u.rem(10);
 
@@ -166,9 +174,9 @@
 
 	& h1 {
 		line-height: 1.2;
-		text-align: center;
 		margin-block: u.rem(40);
-		// font-size: u.rem(20);
+		font-size: 3.5rem;
+		font-size: clamp(3.5rem, 3.3rem + 1vw, 4.5rem);
 	}
 
 	&__banner-details p {
@@ -192,6 +200,14 @@
 			-webkit-text-stroke: 2px var(--lilly-green);
 			color: hsla(112, 44%, 55%, 0);
 			animation: neon-flicker 12s alternate infinite;
+		}
+	}
+
+	&__context {
+		// margin-block: u.rem(60);
+
+		@include u.breakpoint-down(small) {
+			margin-block: u.rem(20);
 		}
 	}
 }
@@ -241,20 +257,17 @@ figcaption {
 	flex-direction: row;
 	justify-content: space-between;
 	gap: u.rem(20);
-	// width: 100%;
 	max-width: 1600px;
-	align-items: center;
+	align-items: flex-start;
 	margin: 0 auto;
-	// height: auto;
 
-	@include u.breakpoint-down(medium) {
+	@include u.breakpoint-down(small) {
 		flex-direction: column;
-		gap: 0;
+		gap: u.rem(8);
 	}
 }
 
-.side-by-side > img,
-.side-by-side > figure {
+.side-by-side > * {
 	height: auto;
 	flex: 1;
 

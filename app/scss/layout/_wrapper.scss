@@ -2,8 +2,11 @@
 
 .wrapper {
 	margin-inline: auto;
-	max-width: 90%;
 	padding-inline: u.rem(10);
+
+	@include u.breakpoint(medium) {
+		max-width: 90%;
+	}
 
 	@include u.breakpoint-down(medium) {
 		max-width: 95%;

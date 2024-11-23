@@ -1,7 +1,7 @@
 @use '../util/' as u;
 
 .button {
-	font-family: u.$header-font;
+	font-family: u.$button-font;
 	display: inline-block;
 	width: fit-content;
 	font-size: u.rem(24);

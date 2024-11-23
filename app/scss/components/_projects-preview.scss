@@ -19,7 +19,8 @@
 	}
 }
 
-.project-link {
+.project-link,
+.next-project-link {
 	display: block;
 	text-decoration: none;
 	color: inherit;
@@ -27,7 +28,8 @@
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-link:hover {
+.project-link:hover,
+.next-project-link:hover {
 	position: relative;
 	transform: translateY(-4px);
 	color: inherit;
@@ -102,7 +104,8 @@
 	display: block;
 }
 
-.project-info {
+.project-info,
+.next-project-info {
 	position: relative;
 	flex: 1;
 	padding: 1rem;

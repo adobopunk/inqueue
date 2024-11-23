@@ -31,8 +31,39 @@
 	transform: translateY(-4px);
 }
 
-.project-image-element {
+.project-image-element,
+.next-project-image-element,
+.next-project-video-element {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
+}
+
+.next-projects-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Defines a two-column layout */
+	gap: 2rem;
+	margin-block-start: u.rem(60);
+
+	// background-color: var(--background-color);
+	// background-image: url(/img/backgrounds/tinyPondText.png);
+	// background-position: center;
+	// background-size: 300vh;
+	// background-attachment: fixed;
+	// background-repeat: no-repeat;
+
+	@include u.breakpoint-down(medium) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@include u.breakpoint-down(small) {
+		padding: 0;
+		background-attachment: scroll;
+	}
+}
+
+.next-projects-container h2 {
+	grid-column: span 2;
 }

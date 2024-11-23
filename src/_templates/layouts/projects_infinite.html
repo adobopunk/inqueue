@@ -1,0 +1,167 @@
+---
+layout: /layouts/base.html
+---
+
+{% assign projectsList = collections.projects %} {% assign currentIndex = -1 %}
+{% for project in projectsList %} {% if project.url == page.url %} {% assign
+currentIndex = forloop.index0 %} {% endif %} {% endfor %} {% assign nextIndex =
+currentIndex | plus: 1 %} {% if nextIndex >= projectsList.size %} {% assign
+nextIndex = 0 %} {% endif %} {% assign nextProject = projectsList[nextIndex] %}
+
+<main id="main" class="project-main">
+	<div class="project-container" data-current-slug="{{ page.fileSlug }}">
+		<article class="project-content">{{ content }}</article>
+
+		<div
+			class="project-loader"
+			data-next-project-url="{{ nextProject.url }}"
+			data-next-project-title="{{ nextProject.data.title }}"
+		></div>
+	</div>
+</main>
+
+<script>
+	// Store loaded projects to prevent duplicates
+	const loadedProjects = new Set();
+	let isLoading = false;
+
+	// Function to load next project content
+	async function loadNextProject(url) {
+		if (loadedProjects.has(url) || isLoading) return;
+		isLoading = true;
+
+		// Show loading indicator on current loader
+		const currentLoader = document.querySelector(
+			`[data-next-project-url="${url}"]`
+		);
+		currentLoader.classList.add('loading');
+		currentLoader.innerHTML = '<div class="loading-indicator"></div>';
+
+		try {
+			const response = await fetch(url);
+			if (!response.ok) throw new Error('Failed to load project');
+
+			const html = await response.text();
+			const parser = new DOMParser();
+			const doc = parser.parseFromString(html, 'text/html');
+
+			// Extract content and navigation data
+			const projectContent = doc
+				.querySelector('.project-content')
+				.cloneNode(true);
+			const nextProjectUrl =
+				doc.querySelector('.project-loader')?.dataset
+					.nextProjectUrl;
+			const nextProjectTitle =
+				doc.querySelector('.project-loader')?.dataset
+					.nextProjectTitle;
+
+			// Create new container
+			const container = document.createElement('div');
+			container.className = 'project-container';
+			container.setAttribute(
+				'data-current-slug',
+				url.split('/').filter(Boolean).pop()
+			);
+
+			// Add content and loader
+			container.appendChild(projectContent);
+
+			if (nextProjectUrl) {
+				const newLoader = document.createElement('div');
+				newLoader.className = 'project-loader';
+				newLoader.dataset.nextProjectUrl = nextProjectUrl;
+				newLoader.dataset.nextProjectTitle = nextProjectTitle;
+				container.appendChild(newLoader);
+			}
+
+			// Fade in new content
+			container.style.opacity = '0';
+			document.querySelector('.project-main').appendChild(container);
+
+			// Trigger reflow and fade in
+			requestAnimationFrame(() => {
+				container.style.opacity = '1';
+			});
+
+			// Update URL and history
+			const title =
+				doc.querySelector('title')?.textContent || document.title;
+			window.history.pushState({}, title, url);
+			document.title = title;
+
+			// Mark as loaded
+			loadedProjects.add(url);
+
+			// Set up observer for new loader
+			setupIntersectionObserver();
+		} catch (error) {
+			console.error('Error loading next project:', error);
+			currentLoader.innerHTML =
+				'<button class="retry-button" onclick="retryLoad(this)">Retry Loading</button>';
+		} finally {
+			isLoading = false;
+			currentLoader.classList.remove('loading');
+		}
+	}
+
+	// Function to retry loading on error
+	function retryLoad(button) {
+		const loader = button.closest('.project-loader');
+		const url = loader.dataset.nextProjectUrl;
+		loadNextProject(url);
+	}
+
+	// Set up intersection observer
+	function setupIntersectionObserver() {
+		const options = {
+			root: null,
+			rootMargin: '200px',
+			threshold: 0.1,
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const loader = entry.target;
+					const nextUrl = loader.dataset.nextProjectUrl;
+
+					if (nextUrl) {
+						loadNextProject(nextUrl);
+						observer.unobserve(loader);
+					}
+				}
+			});
+		}, options);
+
+		// Observe all project loaders
+		document.querySelectorAll('.project-loader').forEach((loader) => {
+			observer.observe(loader);
+		});
+	}
+
+	// Handle scroll position on navigation
+	function scrollToProject(slug) {
+		const container = document.querySelector(
+			`[data-current-slug="${slug}"]`
+		);
+		if (container) {
+			container.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
+	// Initialize observers
+	document.addEventListener('DOMContentLoaded', () => {
+		setupIntersectionObserver();
+		loadedProjects.add(window.location.pathname);
+	});
+
+	// Handle browser navigation
+	window.addEventListener('popstate', () => {
+		const targetSlug = window.location.pathname
+			.split('/')
+			.filter(Boolean)
+			.pop();
+		scrollToProject(targetSlug);
+	});
+</script>

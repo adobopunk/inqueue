@@ -30,6 +30,9 @@
 		transition: text-shadow 0.5s;
 		text-shadow: 0 0 0 transparent;
 
+		font-size: 1.2rem;
+		font-size: clamp(1.2rem, 1.14rem + 0.3vw, 1.5rem);
+
 		@include u.breakpoint(medium) {
 			max-width: 35ch; /* max 50 characters per line */
 		}
@@ -53,9 +56,9 @@
 			white-space: wrap;
 		}
 
-		&:hover {
-			text-shadow: 10px 10px 0 var(--feature-1); /* solid drop shadow on hover */
-		}
+		// &:hover {
+		// 	text-shadow: 10px 10px 0 var(--feature-1); /* solid drop shadow on hover */
+		// }
 	}
 
 	&__button-wrapper {
