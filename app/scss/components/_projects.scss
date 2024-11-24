@@ -2,7 +2,7 @@
 
 .project {
 	overflow-x: hidden;
-	width: 100vw;
+	width: 100%;
 	min-height: 100vh;
 	padding-top: u.rem(120);
 	background-color: var(--background-color);
@@ -214,6 +214,7 @@ figcaption {
 .side-by-side > * {
 	height: auto;
 	flex: 1;
+	min-width: 0;
 
 	@include u.breakpoint(large) {
 		width: 45%;
@@ -258,9 +259,4 @@ figcaption {
 
 .project__info {
 	margin-block: u.rem(60);
-}
-
-#our-work {
-	// text-align: center;
-	// margin: 0 auto;
 }
