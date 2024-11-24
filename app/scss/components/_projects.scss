@@ -229,7 +229,7 @@ figcaption {
 		text-align: center;
 
 		& * {
-			max-width: 75%;
+			max-width: 50ch;
 		}
 	}
 
@@ -258,4 +258,9 @@ figcaption {
 
 .project__info {
 	margin-block: u.rem(60);
+}
+
+#our-work {
+	text-align: center;
+	margin: 0 auto;
 }

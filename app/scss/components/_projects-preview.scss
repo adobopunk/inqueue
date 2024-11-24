@@ -5,7 +5,7 @@
 	flex-direction: column;
 	gap: 4rem;
 	padding: 2rem;
-	padding-block: u.rem(100);
+	padding-block: u.rem(120);
 
 	background-color: var(--background-color);
 	background-image: url(/img/backgrounds/tinyPondText.png);
@@ -16,6 +16,7 @@
 
 	@include u.breakpoint-down(small) {
 		padding: 0;
+		padding-block: u.rem(120);
 	}
 }
 

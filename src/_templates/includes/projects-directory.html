@@ -1,0 +1,23 @@
+{% for project in collections.projects %} {% if project.data.featured ==
+	"yes" %}
+	<a href="{{ project.url | url }}" class="project-link">
+		<div class="project-preview">
+			<div class="project-video">
+				<video
+					src="{{ project.data.videoPath }}"
+					autoplay
+					loop
+					muted
+					playsinline
+					class="project-video-element"
+				></video>
+			</div>
+			<div class="project-info">
+				<h2 class="project-title">{{ project.data.title }}</h2>
+				<p class="project-description">
+					{{ project.data.description }}
+				</p>
+			</div>
+		</div>
+	</a>
+	{% endif %} {% endfor %}
