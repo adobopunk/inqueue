@@ -34,7 +34,7 @@
 		font-size: clamp(1.2rem, 1.14rem + 0.3vw, 1.5rem);
 
 		@include u.breakpoint(medium) {
-			max-width: 35ch; /* max 50 characters per line */
+			max-width: 50ch;
 		}
 	}
 

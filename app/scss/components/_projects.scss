@@ -10,6 +10,9 @@
 	background-position: center;
 	background-size: 300vh;
 	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	gap: u.rem(10);
 
 	@include u.breakpoint-down(small) {
 		background-attachment: scroll;
@@ -22,19 +25,13 @@
 	color: var(--murky-clouds);
 
 	&__wrapper {
-		// width: min(100% - u.rem(40), 75%);
 		min-height: 100vh;
-
-		// @include u.breakpoint-down(large) {
-		// 	width: min(100% - u.rem(0), 90%);
-		// }
 
 		& p {
 			font-family: u.$font;
 			font-weight: 400;
 			line-height: 1.75;
 			font-style: normal;
-			margin-block: u.rem(40);
 
 			@include u.breakpoint-down(small) {
 				margin-block: u.rem(10);
@@ -42,7 +39,7 @@
 		}
 
 		& h2 {
-			margin-block: u.rem(40);
+			margin-block-start: u.rem(40);
 
 			@include u.breakpoint-down(small) {
 				margin-block: u.rem(10);
@@ -127,20 +124,19 @@
 		display: block;
 		text-align: center;
 		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
-		margin: 25px auto;
+		margin: 15px auto;
 	}
 
 	&__wrapper video {
 		width: 100%;
 		max-width: 1600px;
 		display: block;
-		margin: 15px auto;
+		margin: 0px auto;
 		text-align: center;
 		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
 
-		@include u.breakpoint-down(large) {
-			width: 100%;
-			margin: 15px auto;
+		@include u.breakpoint-down(medium) {
+			margin: 4px auto;
 		}
 	}
 
@@ -256,15 +252,28 @@ figcaption {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	gap: u.rem(20);
+	gap: u.rem(12);
 	max-width: 1600px;
 	align-items: flex-start;
 	margin: 0 auto;
+	margin-block: u.rem(12);
 
 	@include u.breakpoint-down(small) {
 		flex-direction: column;
 		gap: u.rem(8);
 	}
+}
+
+.side-by-side-text {
+	gap: u.rem(60);
+
+	@include u.breakpoint-down(small) {
+		gap: u.rem(4);
+	}
+}
+
+.side-by-side img {
+	margin: 0;
 }
 
 .side-by-side > * {
@@ -273,6 +282,25 @@ figcaption {
 
 	@include u.breakpoint(large) {
 		width: 45%;
+	}
+}
+
+.services {
+	display: flex;
+	flex-direction: column;
+
+	@include u.breakpoint(medium) {
+		align-items: center;
+		text-align: center;
+
+		& * {
+			max-width: 75%;
+		}
+	}
+
+	@include u.breakpoint-down(medum) {
+		align-items: flex-start;
+		text-align: left;
 	}
 }
 

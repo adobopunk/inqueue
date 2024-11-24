@@ -31,7 +31,12 @@
 	src: url(../../../fonts/Yink\ Regular.ttf);
 }
 
-$font: 'Open Sans', sans-serif;
+@font-face {
+	font-family: 'Source Sans';
+	src: url(/fonts/Source\ Sans\ Pro\ Regular.ttf);
+}
+
+$font: 'Source Sans', sans-serif;
 $header-font: 'Roc Grotesk Medium', sans-serif;
 $button-font: 'Roc Grotesk Extrabold', sans-serif;
 $silly-font: 'Yink';
