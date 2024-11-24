@@ -1,11 +1,7 @@
 <div class="projects-directory" id="work">
 	{% for project in collections.projects %} {% if project.data.featured ==
 	"yes" %}
-	<a
-		href="{{ project.url | url }}"
-		class="project-link"
-		id="{{ project.fileSlug }}"
-	>
+	<a href="{{ project.url | url }}" class="project-link">
 		<div class="project-preview">
 			<div class="project-video">
 				<video
@@ -40,13 +36,16 @@
 		<div class="project-preview">
 			<div class="project-image">
 				<img
+					class="next-image"
 					src="{{ project.data.imagePath }}"
 					alt="{{ project.data.title }}"
 					loading="lazy"
 					class="project-image-element"
 				/>
 				<div class="project-overlay">
-					<h3 class="project-title">{{ project.data.title }}</h3>
+					<h3 class="project-overlay-title">
+						{{ project.data.title }}
+					</h3>
 				</div>
 			</div>
 		</div>
