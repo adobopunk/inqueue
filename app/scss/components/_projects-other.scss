@@ -24,14 +24,6 @@
 	position: relative;
 	overflow: hidden;
 	transition: transform 0.3s ease;
-
-	&:hover {
-		transform: translateY(-4px);
-
-		.project-overlay {
-			opacity: 1;
-		}
-	}
 }
 
 .project-image {
@@ -46,20 +38,6 @@
 	display: block;
 }
 
-.project-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.7);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
 .project-title {
 	color: white;
 	font-size: 1.5rem;
@@ -68,11 +46,6 @@
 
 	font-size: 2.5rem;
 	font-size: clamp(2.5rem, 2.3rem + 1vw, 3.5rem);
-}
-
-.project-overlay-title {
-	font-size: 1.75rem;
-	font-size: clamp(1.75rem, 1.65rem + 0.5vw, 2.25rem);
 }
 
 .next-projects-container {
