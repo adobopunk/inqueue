@@ -5,7 +5,8 @@
 	flex-direction: column;
 	gap: 4rem;
 	padding: 2rem;
-	padding-block: u.rem(60);
+	padding-block-start: u.rem(180);
+	padding-block-end: u.rem(60);
 
 	background-color: var(--background-color);
 	background-image: url(/img/backgrounds/tinyPondText.png);
@@ -13,11 +14,6 @@
 	background-size: 300vh;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-
-	@include u.breakpoint-down(small) {
-		padding: 0;
-		padding-block: u.rem(60);
-	}
 }
 
 .project-link,
