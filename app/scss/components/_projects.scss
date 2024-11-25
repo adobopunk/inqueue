@@ -40,10 +40,6 @@
 
 		& h2 {
 			margin-block-start: u.rem(40);
-
-			@include u.breakpoint-down(small) {
-				margin-block: u.rem(10);
-			}
 		}
 	}
 
@@ -164,13 +160,18 @@
 }
 
 figcaption {
-	font-style: italic;
+	// font-style: italic;
 	font-weight: bold;
 	text-align: center;
 	font-family: u.$font;
 	color: var(--murky-clouds);
 	margin-block: 20px;
 	box-shadow: none;
+	font-size: u.rem(14);
+
+	@include u.breakpoint-down(small) {
+		font-size: u.rem(12);
+	}
 }
 
 .bio-accent {

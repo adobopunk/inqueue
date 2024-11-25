@@ -266,3 +266,12 @@ textarea {
 	align-items: center;
 	justify-content: center;
 }
+
+.copy-link {
+	display: inline-block; /* Ensures the hover effect works properly */
+	transition: transform 0.3s ease; /* Smooth animation for the hover effect */
+}
+
+.copy-link:hover {
+	transform: translateY(-3px); /* Moves the link upward by 3 pixels */
+}
