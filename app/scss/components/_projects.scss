@@ -137,6 +137,10 @@
 			margin-block: u.rem(20);
 		}
 	}
+
+	& img {
+		margin-block: u.rem(12);
+	}
 }
 
 .divider {
