@@ -4,8 +4,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
-	padding: 2rem;
-	padding-block-start: u.rem(180);
 	padding-block-end: u.rem(60);
 
 	background-color: var(--background-color);
@@ -14,6 +12,11 @@
 	background-size: 300vh;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+
+	@include u.breakpoint(medium) {
+		padding: 2rem;
+		padding-block-start: u.rem(180);
+	}
 }
 
 .project-link,
