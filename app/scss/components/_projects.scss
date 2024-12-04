@@ -51,7 +51,7 @@
 
 	&__wrapper img {
 		width: 100%;
-		max-width: 1600px;
+		// max-width: 1600px;
 		display: block;
 		text-align: center;
 		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
@@ -60,7 +60,7 @@
 
 	&__wrapper video {
 		width: 100%;
-		max-width: 1600px;
+		// max-width: 1600px;
 		display: block;
 		// margin: 15px auto;
 		text-align: center;
@@ -193,7 +193,7 @@ figcaption {
 	flex-direction: row;
 	justify-content: space-between;
 	gap: u.rem(12);
-	max-width: 1600px;
+	// max-width: 1600px;
 	align-items: flex-start;
 	margin: 0 auto;
 	margin-block: u.rem(12);
