@@ -3,12 +3,8 @@ const words = [
 	'Visuals.',
 	'Branding.',
 	'Animation.',
-	'Live Events.',
-	'Broadcasts.',
-	'Marketing.',
+	'Websites',
 	'Experiences.',
-	'Esports.',
-	'Designs.',
 ]; // array of words
 let currentWordIndex = 1;
 let opacity = 1;

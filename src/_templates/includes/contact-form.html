@@ -6,15 +6,16 @@
 		data-netlify="true"
 		data-netlify-recaptcha="true"
 	>
+		<p class="visually-hidden">
+			<label>
+				Don’t fill this out if you’re human:
+				<input name="bot-field" />
+			</label>
+		</p>
 		<!-- Two fields in one line -->
-		<div class="form-row">
+		<!-- <div class="form-row">
 			<div class="form-group half-width">
-				<p class="visually-hidden">
-					<label>
-						Don’t fill this out if you’re human:
-						<input name="bot-field" />
-					</label>
-				</p>
+				
 				<label for="firstname">Your First Name</label>
 				<input
 					type="text"
@@ -34,47 +35,27 @@
 					placeholder="Sobon"
 				/>
 			</div>
-		</div>
-
+		</div> -->
 		<!-- Full-width field -->
 		<div class="form-row">
-			<div class="form-group full-width">
+			<div class="form-group half-width">
+				<label for="company">Your Name</label>
+				<input
+					type="text"
+					id="company"
+					name="company"
+					placeholder="Josh Smith"
+				/>
+			</div>
+			<div class="form-group half-width">
 				<label for="email">Your Email Address</label>
 				<input
 					type="email"
 					id="email"
 					name="email"
 					required
-					placeholder="cory@tinypond.studio"
+					placeholder="your@email.com"
 				/>
-			</div>
-		</div>
-		<!-- Full-width field -->
-		<div class="form-row">
-			<div class="form-group full-width">
-				<label for="company">Your Business or Company Name</label>
-				<input
-					type="text"
-					id="company"
-					name="company"
-					placeholder="Big Frogs Inc."
-				/>
-			</div>
-		</div>
-
-		<!-- Dropdown for Budget -->
-		<div class="form-row">
-			<div class="form-group full-width">
-				<label for="budget">Tell us about your budget:</label>
-				<select id="budget" name="budget" required>
-					<option value="" disabled selected>
-						Select your budget
-					</option>
-					<option value="under-5000">Under $5,000</option>
-					<option value="5000-10000">$5,000 - $10,000</option>
-					<option value="10000-25000">$10,000 - $25,000</option>
-					<option value="25000-plus">Over $25,000</option>
-				</select>
 			</div>
 		</div>
 
@@ -90,35 +71,7 @@
 				></textarea>
 			</div>
 		</div>
-		<!-- Full-width taller field -->
-		<div class="form-row">
-			<div class="form-group full-width">
-				<label for="interest"
-					>What interests you about working with Tiny
-					Pond?</label
-				>
-				<textarea
-					id="interest"
-					name="interest"
-					required
-					placeholder="This helps us understand what aspects of our studio drew you to this project, so we can better cater to your needs."
-				></textarea>
-			</div>
-		</div>
-		<!-- Full-width taller field -->
-		<div class="form-row">
-			<div class="form-group full-width">
-				<label for="discovery"
-					>How did you hear about Tiny Pond?</label
-				>
-				<textarea
-					id="discovery"
-					name="discovery"
-					required
-					placeholder="This helps us understand how we're doing. If you were referred to Tiny Pond, please let us know who referred you!"
-				></textarea>
-			</div>
-		</div>
+
 		<div data-netlify-recaptcha="true"></div>
 
 		<button class="button tertiary" type="submit">Send Message</button>
