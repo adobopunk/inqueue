@@ -1,6 +1,2 @@
 Sitemap: https://tinypond.studio/sitemap.xml
 
-User-agent: *
-Disallow: /team/index.html
-Disallow: /projects/drafts
-Disallow: /projects
