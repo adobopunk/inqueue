@@ -1,2 +1,5 @@
 Sitemap: https://tinypond.studio/sitemap.xml
 
+
+User-agent: *
+Disallow: /projects/deco-deco/

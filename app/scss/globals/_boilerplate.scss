@@ -111,3 +111,14 @@ a {
 		text-shadow: 0 0 20px hsl(195, 77%, 50%);
 	}
 }
+
+ul {
+	list-style: none; /* Removes default bullet points */
+	padding: 0; /* Removes default padding */
+	margin: 0; /* Removes default margin */
+}
+
+ul li {
+	padding-block: 15px; /* Adds spacing inside each list item */
+	font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+}
