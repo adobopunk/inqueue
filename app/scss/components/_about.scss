@@ -186,7 +186,7 @@
 		align-items: flex-start;
 		justify-content: center;
 		align-items: center;
-		max-width: 30vw;
+		max-width: 40vw;
 		padding: 20px;
 
 		@include u.breakpoint-down(large) {
@@ -292,8 +292,6 @@
 #values-headline {
 	text-align: center;
 }
-
-
 
 .bio-accent {
 	margin: 10px auto;

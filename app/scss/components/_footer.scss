@@ -20,7 +20,7 @@
 		text-align: center;
 		align-items: center;
 		justify-content: space-around;
-		min-height: 20vh;
+		min-height: 100vh;
 		gap: 5%;
 
 		@include u.breakpoint(small) {

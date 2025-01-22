@@ -19,7 +19,10 @@
 	}
 
 	&__text {
-		// float: left;
+		display: flex;
+		flex-direction: column;
+		align-items: center; // float: left;
+		justify-content: center;
 		@include u.breakpoint(large) {
 			// flex: 6;
 		}
@@ -34,7 +37,7 @@
 		font-size: clamp(1.2rem, 1.14rem + 0.3vw, 1.5rem);
 
 		@include u.breakpoint(medium) {
-			max-width: 50ch;
+			max-width: 75ch;
 		}
 	}
 
@@ -43,6 +46,8 @@
 		white-space: nowrap;
 		text-shadow: 0 0 0 transparent;
 		display: inline-block;
+		text-align: center;
+		width: 50vw; /* Adjust to fit your longest word */
 
 		font-size: 4.5rem;
 		font-size: clamp(4.5rem, 4.1rem + 2vw, 6.5rem);
@@ -54,6 +59,7 @@
 			font-size: clamp(3.4rem, 3.24rem + 0.8vw, 4.2rem);
 			max-width: 10ch;
 			white-space: wrap;
+			width: 90vw;
 		}
 
 		// &:hover {
@@ -89,28 +95,18 @@
 		height: 100vh;
 		z-index: -1;
 
-		@include u.breakpoint(medium) {
-			background: linear-gradient(
-				to right,
-				rgb(0, 50, 72) 10%,
-				rgba(0, 50, 72, 0.746) 30%,
-				rgba(255, 255, 255, 0) 80%
-			);
-		}
-		@include u.breakpoint-down(small) {
-			background: linear-gradient(
-				to bottom,
-				rgba(0, 50, 72, 0) 20%,
-				rgba(0, 50, 72, 0.736) 50%,
-				rgba(0, 50, 72, 0) 80%
-			);
-		}
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 50, 72, 0) 10%,
+			rgba(0, 50, 72, 0.736) 50%,
+			rgba(0, 50, 72, 0) 90%
+		);
 	}
 
 	.bg-text-hero {
 		z-index: -1;
 		font-family: u.$silly-font;
-		font-size: 20vw;
+		font-size: 22vw;
 		white-space: nowrap;
 		-webkit-text-stroke: 2px hsla(112, 44%, 55%, 0.149);
 		color: hsla(112, 44%, 55%, 0);
@@ -123,18 +119,8 @@
 		animation: neon-flicker 12s alternate infinite;
 		opacity: 25%;
 
-		@include u.breakpoint-down(large) {
-			font-size: 40vw;
-		}
-
 		@include u.breakpoint-down(medium) {
-			font-size: 60vw;
-			left: '';
-			right: 0;
-		}
-
-		@include u.breakpoint-down(small) {
-			opacity: 0;
+			display: none;
 		}
 	}
 

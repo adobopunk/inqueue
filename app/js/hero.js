@@ -3,7 +3,7 @@ const words = [
 	'Visuals.',
 	'Branding.',
 	'Animation.',
-	'Websites',
+	'Websites.',
 	'Experiences.',
 ]; // array of words
 let currentWordIndex = 1;
@@ -34,3 +34,21 @@ function animate() {
 }
 
 setTimeout(animate, 1000); // delay the animation by 500ms
+
+// Scroll-based movement for .bg-text-hero
+const bgTextHero = document.querySelector('.bg-text-hero');
+
+function handleScroll() {
+	// Get the current scroll position
+	const scrollPosition = window.scrollY;
+
+	// Calculate new left position for scrolling to the left
+	// Adjust multiplier to control speed (smaller = slower)
+	const newLeft = -5 - scrollPosition * 0.02; // Subtract to move left
+
+	// Apply the new position
+	bgTextHero.style.left = `${newLeft}%`;
+}
+
+// Attach the scroll event listener
+window.addEventListener('scroll', handleScroll);
