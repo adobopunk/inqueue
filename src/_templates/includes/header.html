@@ -10,8 +10,8 @@
 
 		<title>
 			{% if page.url == "/" %}{{ title }} | {{ description }}{% else
-			%}{{ title }} | Tiny Pond: an Independent, Worker-Owned Creative
-			Agency{% endif %}
+			%}{{ title }} | Tiny Pond: Independent, Full Service Design and
+			Animation{% endif %}
 		</title>
 
 		<meta
@@ -30,6 +30,12 @@
 			content="{{ site.siteUrl }}/img/og-image.webp"
 		/>
 		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+		<meta
+			property="og:site_name"
+			content="Tiny Pond: Independent, Full Service Design and
+Animation"
+		/>
 
 		<link
 			rel="apple-touch-icon"
@@ -67,6 +73,17 @@
 		<!-- <link rel="stylesheet" href="/assets/css/base.css" /> -->
 		<link rel="stylesheet" href="/assets/css/style.css" />
 		<link href="/assets/css/lightbox.css" rel="stylesheet" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "Tiny Pond",
+				"description": "Tiny Pond is a creative team bringing you bespoke designs and animations. We craft original branding for creators, businesses, events, live broadcasts, bringing your vision to life with unique and impactful solutions tailor-made for you.",
+				"url": "{{ site.siteUrl }}",
+				"logo": "{{ site.siteUrl }}/img/Logos/Color Logo White.webp",
+				"sameAs": ["https://bsky.app/profile/tinypond.studio"]
+			}
+		</script>
 
 		<script
 			defer
