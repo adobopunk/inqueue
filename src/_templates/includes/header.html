@@ -7,11 +7,16 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<meta name="color-scheme" content="dark" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="keywords"
+			content="design, animation, bespoke, branding, creative agency, Tiny Pond"
+		/>
+		<link rel="canonical" href="{{ site.siteUrl }}{{ page.url | url }}" />
 
 		<title>
-			{% if page.url == "/" %}{{ title }} | {{ description }}{% else
-			%}{{ title }} | Tiny Pond: Independent, Full Service Design and
-			Animation{% endif %}
+			{% if page.url == "/" %}{{ title }} {% else %}{{ title }} | Tiny
+			Pond: Independent Design Studio{% endif %}
 		</title>
 
 		<meta
@@ -35,6 +40,15 @@
 			property="og:site_name"
 			content="Tiny Pond: Independent, Full Service Design and
 Animation"
+		/>
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{{ title }}" />
+		<meta name="twitter:description" content="{{ description }}" />
+		<meta
+			name="twitter:image"
+			content="{{ site.siteUrl }}/img/og-image.webp"
 		/>
 
 		<link
@@ -78,9 +92,14 @@ Animation"
 				"@context": "https://schema.org",
 				"@type": "Organization",
 				"name": "Tiny Pond",
+				"alternateName": "Tiny Pond Studio",
 				"description": "Tiny Pond is a creative team bringing you bespoke designs and animations. We craft original branding for creators, businesses, events, live broadcasts, bringing your vision to life with unique and impactful solutions tailor-made for you.",
 				"url": "{{ site.siteUrl }}",
-				"logo": "{{ site.siteUrl }}/img/Logos/Color Logo White.webp",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "{{ site.siteUrl }}/img/Logos/Color Logo White.webp",
+					"alternateName": "Tiny Pond Logo"
+				},
 				"sameAs": ["https://bsky.app/profile/tinypond.studio"]
 			}
 		</script>
