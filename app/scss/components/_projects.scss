@@ -234,13 +234,12 @@ figcaption {
 .services {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-	text-align: right;
+	// text-align: center;
+	align-items: center;
+}
 
-	@include u.breakpoint-down(medium) {
-		align-items: flex-start;
-		text-align: left;
-	}
+.services li {
+	font-size: 2rem;
 }
 
 .testimonial {
