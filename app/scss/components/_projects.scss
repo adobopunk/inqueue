@@ -44,7 +44,7 @@
 		}
 
 		& h2 {
-			margin-block-start: u.rem(40);
+			// margin-block-start: u.rem(40);
 		}
 	}
 
@@ -201,7 +201,7 @@ figcaption {
 	// max-width: 1600px;
 	align-items: flex-start;
 	margin: 0 auto;
-	margin-block: u.rem(12);
+	margin-block: u.rem(60);
 
 	@include u.breakpoint-down(medium) {
 		flex-direction: column;
@@ -310,4 +310,11 @@ figcaption {
 .services-list {
 	list-style: none;
 	font-size: 100%;
+}
+.center {
+	text-align: center;
+}
+
+.gap {
+	gap: u.rem(80);
 }

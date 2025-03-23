@@ -15,67 +15,59 @@ secondNextIndex = currentIndex | plus: 2 %}
 					{{ content }}
 					<div class="next-projects-container">
 						<h2 class="explore-more">Explore More</h2>
-		
-						{% assign nextProject = collections.projects[nextIndex] %}
-						{% if nextProject == null %} {% assign nextProject =
+
+						{% assign nextProject =
+						collections.projects[nextIndex] %} {% if
+						nextProject == null %} {% assign nextProject =
 						collections.projects[0] %} {% endif %}
 						<a
 							href="{{ nextProject.url | url }}"
 							class="next-project-link"
 						>
 							<div class="next-project-preview">
-								{% if nextProject.data.featured == "yes" %}
-								<video
-									src="{{ nextProject.data.videoPath }}"
-									autoplay
-									loop
-									muted
-									playsinline
-									class="next-project-video-element"
-								></video>
-								{% else %}
 								<img
 									src="{{ nextProject.data.imagePath }}"
 									alt="{{ nextProject.data.title }}"
 									class="next-project-image-element"
 								/>
-								{% endif %}
 								<div class="next-project-info">
-									<h2>{{ nextProject.data.title }}</h2>
-									<p>{{ nextProject.data.description }}</p>
+									<h2>
+										{{ nextProject.data.title }}
+									</h2>
+									<p>
+										{{
+										nextProject.data.description
+										}}
+									</p>
 								</div>
 							</div>
 						</a>
-		
+
 						{% assign secondNextProject =
 						collections.projects[secondNextIndex] %} {% if
-						secondNextProject == null %} {% assign secondNextProject =
-						collections.projects[1] %} {% endif %}
+						secondNextProject == null %} {% assign
+						secondNextProject = collections.projects[1] %} {%
+						endif %}
 						<a
 							href="{{ secondNextProject.url | url }}"
 							class="next-project-link"
 						>
 							<div class="next-project-preview">
-								{% if secondNextProject.data.featured == "yes" %}
-								<video
-									src="{{ secondNextProject.data.videoPath }}"
-									autoplay
-									loop
-									muted
-									playsinline
-									class="next-project-video-element"
-								></video>
-								{% else %}
 								<img
 									src="{{ secondNextProject.data.imagePath }}"
 									alt="{{ secondNextProject.data.title }}"
 									class="next-project-image-element"
 								/>
-								{% endif %}
 								<div class="next-project-info">
-									<h2>{{ secondNextProject.data.title }}</h2>
+									<h2>
+										{{
+										secondNextProject.data.title
+										}}
+									</h2>
 									<p>
-										{{ secondNextProject.data.description }}
+										{{
+										secondNextProject.data.description
+										}}
 									</p>
 								</div>
 							</div>
@@ -83,7 +75,6 @@ secondNextIndex = currentIndex | plus: 2 %}
 					</div>
 				</div>
 			</section>
-
 		</article>
 	</div>
 </main>
