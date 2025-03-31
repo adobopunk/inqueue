@@ -3,12 +3,13 @@
 .footer {
 	background-color: var(--background-color);
 	$b: &;
-	background-image: url(/img/accents/Texture\ Mushroom\ Green\ -\ Compressed.svg);
+	background-image: url(/img/backgrounds/inqueue-bg.webp);
 	background-size: cover; // Use cover for better image scaling
 	background-attachment: scroll;
 	z-index: 50;
 	background-repeat: no-repeat; // Prevent tiling for a cleaner look
-
+	background-attachment: fixed;
+	background-position: center;
 	&__title {
 		margin-block-start: 5vh;
 	}
@@ -49,6 +50,7 @@
 		display: flex;
 		justify-content: center;
 		margin: 0 auto;
+		margin-block: u.rem(20);
 	}
 
 	&__copyright {

@@ -1,5 +1,4 @@
-{% for project in collections.projects %} {% if project.data.featured == "yes"
-%}
+{% for project in collections.projects %}
 <a href="{{ project.url | url }}" class="project-link">
 	<div class="project-preview">
 		<div class="project-video">
@@ -20,10 +19,7 @@
 			/>
 			{% endif %}
 		</div>
-		<div class="project-info">
-			<h2 class="project-title">{{ project.data.title }}</h2>
-			<p class="project-description">{{ project.data.description }}</p>
-		</div>
+		<div class="project-full-content">{{ project.templateContent }}</div>
 	</div>
 </a>
-{% endif %} {% endfor %}
+{% endfor %}

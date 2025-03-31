@@ -43,7 +43,7 @@
 		&:hover {
 			background-color: var(--lilly-green);
 			border: u.rem(2) solid var(--lilly-green);
-			color: var(--murky-clouds);
+			// color: var(--murky-clouds);
 			filter: drop-shadow(0 0 20px hsla(112, 44%, 55%, 0.452));
 		}
 
@@ -52,7 +52,7 @@
 			border: u.rem(2) solid var(--button-primary-white-bg);
 
 			&:hover {
-				color: var(--deep-water);
+				// color: var(--deep-water);
 			}
 		}
 	}
@@ -63,7 +63,7 @@
 		border: u.rem(3) solid var(--blue-fog);
 
 		&:hover {
-			color: var(--murky-clouds);
+			// color: var(--murky-clouds);
 			filter: drop-shadow(0 0 20px hsla(0, 0%, 90%, 0.226));
 		}
 	}
@@ -79,7 +79,7 @@
 		&:hover {
 			background-color: var(--lilly-green);
 			border: u.rem(2) solid var(--lilly-green);
-			color: var(--murky-clouds);
+			// color: var(--murky-clouds);
 			filter: drop-shadow(0 0 20px hsla(112, 44%, 55%, 0.452));
 		}
 	}
