@@ -149,13 +149,13 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 225px;
-	width: 75%;
+	width: 100%;
 	margin: 50px auto;
 	text-align: center;
 
-	@include u.breakpoint-down(small) {
-		height: 20px;
-	}
+	// @include u.breakpoint-down(small) {
+	// 	height: 20px;
+	// }
 }
 
 #our-team,
