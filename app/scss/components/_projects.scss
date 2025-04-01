@@ -145,12 +145,12 @@
 
 .divider {
 	display: block;
-	background-image: url(/img/accents/Leafs\ Long\ -\ Green.svg);
+	background-image: url(/img/Logos/In\ Queue\ Icon\ white\ small.png);
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 50px;
+	height: 225px;
 	width: 75%;
-	margin: 20px auto;
+	margin: 50px auto;
 	text-align: center;
 
 	@include u.breakpoint-down(small) {

@@ -12,6 +12,7 @@
 	background-position: center;
 	&__title {
 		margin-block-start: 5vh;
+		max-width: 45ch;
 	}
 
 	&__wrapper {
@@ -276,4 +277,8 @@ textarea {
 
 .copy-link:hover {
 	transform: translateY(-3px); /* Moves the link upward by 3 pixels */
+}
+.hfPDUu {
+	text-align: center !important;
+	font-weight: 900 !important;
 }
