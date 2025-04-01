@@ -55,7 +55,5 @@ Disallow: /
 
 
 
-User-agent: *
-Disallow: /projects/deco-deco/
 
-Sitemap: https://tinypond.studio/sitemap.xml
+Sitemap: https://playinqueue.com/sitemap.xml

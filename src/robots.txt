@@ -1,5 +1,3 @@
-Sitemap: https://tinypond.studio/sitemap.xml
+Sitemap: https://playinqueue.com/sitemap.xml
 
 
-User-agent: *
-Disallow: /projects/deco-deco/

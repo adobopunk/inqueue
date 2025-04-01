@@ -64,7 +64,7 @@ module.exports = function (eleventyConfig) {
 			includes: '_templates',
 		},
 		data: {
-			siteUrl: 'https://tinypond.studio',
+			siteUrl: 'https://playinqueue.com',
 		},
 	};
 };
