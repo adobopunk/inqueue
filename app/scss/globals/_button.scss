@@ -44,7 +44,7 @@
 			background-color: var(--lilly-green);
 			border: u.rem(2) solid var(--lilly-green);
 			// color: var(--murky-clouds);
-			filter: drop-shadow(0 0 20px hsla(112, 44%, 55%, 0.452));
+			filter: drop-shadow(0 0 20px hsla(0, 0%, 78%, 0.452));
 		}
 
 		&.white {
@@ -80,7 +80,7 @@
 			background-color: var(--lilly-green);
 			border: u.rem(2) solid var(--lilly-green);
 			// color: var(--murky-clouds);
-			filter: drop-shadow(0 0 20px hsla(112, 44%, 55%, 0.452));
+			filter: drop-shadow(0 0 20px hsla(0, 0%, 78%, 0.452));
 		}
 	}
 }

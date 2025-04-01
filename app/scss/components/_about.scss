@@ -20,7 +20,7 @@
 	}
 
 	&__wrapper {
-		width: clamp(350px, 75%, 800px);
+		width: clamp(350px, 75%, 1200px);
 
 		@include u.breakpoint-down(medium) {
 			width: 90%;
@@ -295,4 +295,11 @@
 
 .content p {
 	margin-block: 10px;
+}
+.header-image {
+	width: 100%; /* Ensure it spans the full width */
+	max-height: 50vh; /* Limit the height */
+	object-fit: cover; /* Crop instead of squish */
+	object-position: center; /* Center the crop */
+	display: block; /* Avoid extra spacing from inline images */
 }

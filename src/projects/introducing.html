@@ -1,19 +1,23 @@
 ---
 layout: 'layouts/projects.html'
 title: 'Introducing: In Queue'
-description: 'Visually Striking Wearables.'
-imagePath: '/img/projects/Apparel/Cover 2.jpg'
+description: 'Former BoomTV talent launches new independent, community-first esports label.'
+imagePath: '/img/backgrounds/dark.jpg'
 featured: yes
 order: 4
+date: 2025-04-01
 ---
+
+<img src="{{ imagePath }}" alt="" />
 
 <h1>{{ title }}</h1>
 
-<div class="side-by-side">
-	<h2>Former BoomTV workers launch.</h2>
-	<p>
-		Our apparel designs are crafted to make a statement that lets you feel
-		comfortable and confident in any everyday setting. Here are a few of
-		our favorite projects.
-	</p>
-</div>
+<h3>{{ description }}</h3>
+
+<p class="small">{{ date | date: "%B %d, %Y" }}</p>
+
+<p>
+	Our apparel designs are crafted to make a statement that lets you feel
+	comfortable and confident in any everyday setting. Here are a few of our
+	favorite projects.
+</p>
