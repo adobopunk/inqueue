@@ -5,9 +5,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('app');
 	eleventyConfig.addPassthroughCopy('robots.txt');
 
-	eleventyConfig.addCollection('projects', function (collectionApi) {
+	eleventyConfig.addCollection('news', function (collectionApi) {
 		return collectionApi
-			.getFilteredByGlob('src/projects/*.html')
+			.getFilteredByGlob('src/news/*.html')
 			.sort((a, b) => {
 				// First priority: Check for important: yes
 				const isFeaturedA = a.data.featured === 'yes';
@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
 		'nonFeaturedProjects',
 		function (collectionApi) {
 			return collectionApi
-				.getFilteredByGlob('src/projects/*.html')
+				.getFilteredByGlob('src/news/*.html')
 				.filter((item) => item.data.featured !== 'yes')
 				.sort((a, b) => {
 					// First priority: Check order
@@ -57,12 +57,26 @@ module.exports = function (eleventyConfig) {
 		}
 	);
 
+	eleventyConfig.addFilter('pacificDate', function (date) {
+		// Create a new date object with the provided date
+		const d = new Date(date);
+
+		// Format the date in Pacific Time
+		return new Intl.DateTimeFormat('en-US', {
+			timeZone: 'America/Los_Angeles',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		}).format(d);
+	});
+
 	return {
 		dir: {
 			input: 'src',
 			output: '_site',
 			includes: '_templates',
 		},
+		date: 'date',
 		data: {
 			siteUrl: 'https://playinqueue.com',
 		},

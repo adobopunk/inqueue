@@ -27,7 +27,7 @@
 
 	&__wrapper {
 		min-height: 100vh;
-		width: clamp(250px, 100%, 1800px);
+		width: clamp(350px, 75%, 1200px);
 
 		@include u.breakpoint(medium) {
 			padding-inline: 5%;

@@ -1,28 +1,9 @@
-{% for project in collections.projects %} {% if project.data.featured == "yes"
-%}
-<a href="{{ project.url | url }}" class="project-link">
+{% for post in collections.news %} {% if post.data.featured == "yes" %}
+<a href="{{ post.url | url }}" class="project-link">
 	<div class="project-preview">
-		<div class="project-video">
-			{% if project.data.videoPath %}
-			<video
-				src="{{ project.data.videoPath }}"
-				autoplay
-				loop
-				muted
-				playsinline
-				class="project-video-element"
-			></video>
-			{% else %}
-			<img
-				src="{{ project.data.imagePath }}"
-				alt="{{ project.data.title }}"
-				class="project-image-element"
-			/>
-			{% endif %}
-		</div>
 		<div class="project-info">
-			<h2 class="project-title">{{ project.data.title }}</h2>
-			<p class="project-description">{{ project.data.description }}</p>
+			<h2 class="project-title">{{ post.data.title }}</h2>
+			<p class="project-description">{{ post.data.description }}</p>
 			<h3>Read More...</h3>
 		</div>
 	</div>
