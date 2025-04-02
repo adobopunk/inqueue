@@ -105,9 +105,9 @@
 		@include u.breakpoint(medium) {
 			background: linear-gradient(
 				to left,
-				rgba(0, 50, 72, 0) 10%,
-				rgba(0, 50, 72, 0) 35%,
-				rgb(0, 0, 0) 90%
+				rgba(0, 50, 72, 0) 60%,
+
+				rgb(0, 0, 0) 100%
 			);
 		}
 
