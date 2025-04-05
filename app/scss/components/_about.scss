@@ -22,11 +22,8 @@
 	&__wrapper {
 		width: clamp(350px, 75%, 1200px);
 
-		@include u.breakpoint-down(medium) {
-			width: 90%;
-		}
-		@include u.breakpoint-down(small) {
-			width: 95%;
+		@include u.breakpoint(medium) {
+			padding-inline: 5%;
 		}
 	}
 

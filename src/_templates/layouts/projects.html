@@ -2,7 +2,7 @@
 layout: /layouts/base.html
 ---
 
-{% assign currentIndex = -1 %} {% for project in collections.projects %} {% if
+{% assign currentIndex = -1 %} {% for project in collections.news %} {% if
 project.url == page.url %} {% assign currentIndex = forloop.index0 %} {% endif
 %} {% endfor %} {% assign nextIndex = currentIndex | plus: 1 %} {% assign
 secondNextIndex = currentIndex | plus: 2 %}
@@ -17,9 +17,9 @@ secondNextIndex = currentIndex | plus: 2 %}
 						<h2 class="explore-more">Explore More</h2>
 
 						{% assign nextProject =
-						collections.projects[nextIndex] %} {% if
+						collections.news[nextIndex] %} {% if
 						nextProject == null %} {% assign nextProject =
-						collections.projects[0] %} {% endif %}
+						collections.news[0] %} {% endif %}
 						<a
 							href="{{ nextProject.url | url }}"
 							class="next-project-link"
@@ -44,9 +44,9 @@ secondNextIndex = currentIndex | plus: 2 %}
 						</a>
 
 						{% assign secondNextProject =
-						collections.projects[secondNextIndex] %} {% if
+						collections.news[secondNextIndex] %} {% if
 						secondNextProject == null %} {% assign
-						secondNextProject = collections.projects[1] %} {%
+						secondNextProject = collections.news[1] %} {%
 						endif %}
 						<a
 							href="{{ secondNextProject.url | url }}"
