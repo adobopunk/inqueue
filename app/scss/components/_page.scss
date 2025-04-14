@@ -1,0 +1,361 @@
+@use '../util' as u;
+
+.document {
+	overflow-x: hidden;
+	width: 100vw;
+	padding-top: 10vh;
+	background-color: var(--background-color);
+	background-image: url(/img/backgrounds/Pattern.svg);
+	background-position: center;
+	background-size: 300vh;
+	background-attachment: fixed;
+
+	background-repeat: no-repeat;
+
+	color: var(--murky-water);
+
+	@include u.breakpoint-down(small) {
+		background-attachment: scroll;
+		background-repeat: repeat-y;
+	}
+
+	&__wrapper {
+		width: clamp(350px, 75%, 1200px);
+
+		@include u.breakpoint(medium) {
+			padding-inline: 5%;
+		}
+	}
+
+	&__team-container {
+		width: 100vw;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+		// width: min(100% - u.rem(40), 95%);
+
+		@include u.breakpoint-down(large) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__services {
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--background-color);
+		padding-top: 10vh;
+	}
+
+	&__team {
+		width: 100vw;
+		// min-height: 100vh;
+
+		background-color: var(--background-color);
+		background-position: center;
+		background-size: 300vh;
+		background-attachment: fixed;
+
+		@include u.breakpoint-down(small) {
+			background-attachment: scroll;
+			background-repeat: repeat-y;
+		}
+	}
+
+	&__featured-image {
+		display: block;
+		text-align: center;
+		border: 4px solid var(--lilly-green);
+		border-radius: 10px;
+		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
+		max-width: 600px;
+		margin: 10px auto;
+	}
+
+	&__team-layout {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include u.breakpoint-down(medium) {
+			gap: 10px;
+		}
+
+		& span {
+			font-size: u.rem(32);
+			line-height: 1.2;
+			font-weight: 700;
+			display: block;
+			text-align: center;
+			font-style: italic;
+			margin-block-end: u.rem(20);
+		}
+	}
+
+	&__values-layout {
+		display: flex;
+		flex-direction: row;
+		column-gap: 40px;
+		align-items: flex-start;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include u.breakpoint-down(medium) {
+			gap: 10px;
+		}
+
+		& span {
+			font-size: u.rem(32);
+			line-height: 1.2;
+			font-weight: 700;
+			display: block;
+			text-align: center;
+			font-style: italic;
+			margin-block-end: u.rem(20);
+		}
+
+		& p {
+			width: 22vw;
+			min-width: 400px;
+			border: 2px solid var(--lilly-green);
+			border-radius: 15px;
+			padding: 25px 35px;
+			background-color: var(--about-background);
+			backdrop-filter: blur(10px);
+			transition: transform 0.3s ease, box-shadow 0.3s linear;
+			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.185);
+
+			&:hover {
+				box-shadow: 0 10px 10px rgba(0, 0, 0, 0.185),
+					0 10px 40px rgba(2, 125, 20, 0.361);
+
+				transform: translateY(-10px);
+			}
+		}
+	}
+
+	& h1 {
+		text-align: center;
+		margin-block: 2.5rem;
+		margin-bottom: u.rem(40);
+	}
+
+	& h2 {
+	}
+
+	& p {
+		font-family: u.$font;
+		font-weight: 400;
+		line-height: 1.75;
+		font-style: normal;
+		margin-block: u.rem(40);
+		text-align: left;
+
+		@include u.breakpoint-down(small) {
+		}
+	}
+
+	& img {
+		// width: 50vw;
+		max-width: 1200px;
+		display: block;
+		text-align: center;
+		border: 4px solid var(--lilly-green);
+		border-radius: 10px;
+		box-shadow: 0 10px 10px hsla(210, 100%, 5%, 0.503);
+
+		margin: 10px auto;
+
+		@include u.breakpoint-down(large) {
+			// width: 80vw;
+		}
+	}
+
+	&__person {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		align-items: center;
+		max-width: 40vw;
+		padding: 20px;
+
+		@include u.breakpoint-down(large) {
+			max-width: clamp(500px, 75%, 800px);
+		}
+		@include u.breakpoint-down(medium) {
+			max-width: 75vw;
+		}
+		@include u.breakpoint-down(small) {
+			max-width: 100vw;
+		}
+
+		@include u.breakpoint-down(small) {
+			flex-direction: column;
+		}
+	}
+
+	&__headshot {
+		position: relative;
+		display: block;
+		margin: auto;
+		width: 400px;
+		height: 400px;
+		top: 120px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		box-shadow: 0 20 30px hsla(0, 0%, 0%, 0.268);
+		overflow: visible;
+		z-index: 100;
+
+		@include u.breakpoint-down(small) {
+			width: 300px;
+			top: 200px;
+		}
+	}
+
+	&__bio {
+		display: block;
+		min-height: 500px;
+		width: 100%;
+		max-width: 1000px;
+		background-color: var(--about-background);
+		border-radius: 20px;
+		padding-block-end: 50px;
+		border: 8px solid var(--lilly-green);
+		background-size: 75%;
+		backdrop-filter: blur(10px);
+	}
+
+	&__bio h3 {
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	&__bio-name,
+	&__bio-text {
+		color: var(--murky-clouds);
+	}
+
+	&__bio-name {
+		font-size: u.rem(48);
+		text-align: center;
+	}
+
+	&__bio-name span {
+		display: block;
+		font-size: u.rem(24);
+		font-family: u.$font;
+		font-weight: 800;
+		font-style: italic;
+	}
+
+	&__bio-text {
+		padding-inline: 40px;
+
+		@include u.breakpoint-down(medium) {
+			padding-inline: 10px;
+		}
+	}
+
+	&__bio-name {
+		padding-top: 100px;
+		margin-block: 40px;
+	}
+}
+
+.pfp {
+	position: absolute;
+	border-radius: 50%;
+	scale: 95%;
+}
+
+#our-team,
+#values-headline {
+	text-align: center;
+}
+
+.bio-accent {
+	margin: 10px auto;
+	width: 25px;
+	text-align: center;
+}
+
+#values {
+	padding-bottom: 25vh;
+}
+
+.content p {
+	margin-block: 10px;
+}
+.header-image {
+	width: 100%; /* Ensure it spans the full width */
+	max-height: 50vh; /* Limit the height */
+	object-fit: cover; /* Crop instead of squish */
+	object-position: center; /* Center the crop */
+	display: block; /* Avoid extra spacing from inline images */
+}
+
+.overlay {
+	position: fixed; // Fixed position to cover the entire viewport
+	top: 0; // Align to the top
+	left: 0; // Align to the left
+	width: 100vw; // Full width
+	height: 100vh; // Full height
+	background: rgb(0, 0, 0); // Black background with slight transparency
+	z-index: 10; // Ensure it appears above other content
+	display: none; // Initially hidden
+	justify-content: center; // Center the content
+	align-items: center; // Center the content vertically
+	opacity: 0; // Start as invisible
+	transition: opacity 0.5s ease; // Transition for fade effect
+}
+.overlay-content {
+	color: rgb(0, 0, 0); // White text color
+	max-width: 2160px; // Max width for content
+	width: 90%; // Responsive width
+	margin: auto; // Center the content
+}
+
+.overlay.reelon {
+	display: flex; // Display the overlay as a flex container when active
+	opacity: 1; // Fully visible
+}
+
+.close-overlay {
+	font-size: 60px; // Increase font size of the X
+	color: rgb(255, 255, 255); // Change color to white
+	cursor: pointer; // Change cursor to pointer
+	position: absolute; // Position it within the overlay
+	top: 5px; // Adjust top position
+	right: 20px; // Adjust right position
+
+	&:hover {
+		color: rgb(61, 61, 61);
+	}
+}
+#showreel-overlay {
+	z-index: 1000;
+}
+
+.vimeo-container {
+	position: relative;
+	padding-bottom: 42%; /* 16:9 aspect ratio */
+	height: 0;
+	overflow: hidden;
+	width: 100%;
+	margin: 0;
+}
+
+.iframe-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 0, 0);
+}

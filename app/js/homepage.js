@@ -20,11 +20,18 @@ function setupFadeInAnimations() {
 
 	debug(`Found ${animatedTags.length} animated tags`);
 
-	animatedTags.forEach((tag) => (tag.style.opacity = 0));
+	animatedTags.forEach((tag) => {
+		if (!tag.closest('.no-animation')) {
+			tag.style.opacity = 0;
+		}
+	});
 
 	function fadeIn() {
 		let delay = 0;
 		animatedTags.forEach((tag) => {
+			// Skip tags that are .no-animation or inside one
+			if (tag.closest('.no-animation')) return;
+
 			const tagTop = tag.getBoundingClientRect().top;
 			const tagBottom = tag.getBoundingClientRect().bottom;
 			if (
