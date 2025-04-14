@@ -11,7 +11,7 @@ h1 {
 	font-size: 3rem;
 	font-size: clamp(3rem, 2.8rem + 1vw, 4rem);
 	line-height: 1.2;
-	margin-block-end: u.rem(40);
+	margin-block-end: u.rem(10);
 
 	// @include u.breakpoint-down(small) {
 	// 	font-size: 1rem;
