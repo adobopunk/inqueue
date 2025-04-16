@@ -26,8 +26,10 @@
 	color: var(--murky-clouds);
 
 	&__wrapper {
-		min-height: 100vh;
-		width: clamp(350px, 85%, 1600px);
+		// min-height: 100vh;
+		// width: clamp(350px, 85%, 1600px);
+
+		width: clamp(350px, 75%, 1200px);
 
 		@include u.breakpoint(medium) {
 			padding-inline: 5%;
