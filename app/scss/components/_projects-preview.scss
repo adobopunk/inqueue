@@ -89,7 +89,10 @@
 	@include u.breakpoint(large) {
 		margin-block-start: 10px;
 	}
+}
 
+a .project-info h2,
+a .project-info h3 {
 	&:hover {
 		text-decoration: underline;
 		text-decoration-thickness: 4px;
