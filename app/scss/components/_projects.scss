@@ -339,4 +339,8 @@ figcaption {
 }
 iframe {
 	margin-block-end: u.rem(40);
+	width: 100%;
+	max-width: 960px; /* Max width, to prevent it from getting too wide */
+	height: auto;
+	aspect-ratio: 16/9; /* Maintains the 16:9 ratio */
 }
