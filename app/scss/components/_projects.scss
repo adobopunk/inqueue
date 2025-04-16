@@ -337,8 +337,10 @@ figcaption {
 .gap {
 	gap: u.rem(80);
 }
-iframe {
+.twitch-embed > iframe {
 	margin-block-end: u.rem(40);
+	height: '600';
+	width: '960';
 	width: 100%;
 	max-width: 960px; /* Max width, to prevent it from getting too wide */
 	height: auto;
