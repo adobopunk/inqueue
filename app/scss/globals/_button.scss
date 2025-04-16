@@ -68,17 +68,15 @@
 		}
 	}
 	&.tertiary {
-		background-color: var(--lilly-green);
+		background-color: var(--murky-clouds);
 		color: var(--deep-water);
-		border: u.rem(2) solid var(--lilly-green);
 		font-size: u.rem(18);
 		align-self: center;
 		cursor: pointer;
 		margin-block: 0;
 
 		&:hover {
-			background-color: var(--lilly-green);
-			border: u.rem(2) solid var(--lilly-green);
+			background-color: var(--murky-clouds);
 			// color: var(--murky-clouds);
 			filter: drop-shadow(0 0 20px hsla(0, 0%, 78%, 0.452));
 		}

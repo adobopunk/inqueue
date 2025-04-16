@@ -92,7 +92,8 @@
 }
 
 a .project-info h2,
-a .project-info h3 {
+a .project-info h3,
+a .next-project-preview h2 {
 	&:hover {
 		text-decoration: underline;
 		text-decoration-thickness: 4px;
