@@ -1,11 +1,109 @@
-{% for post in collections.news %} {% if post.data.featured == "yes" %}
-<a href="{{ post.url | url }}" class="project-link">
-	<div class="project-preview">
-		<div class="project-info">
-			<h2 class="project-title">{{ post.data.title }}</h2>
-			<p class="project-description">{{ post.data.description }}</p>
-			<h3>Read More...</h3>
+<div class="news-gallery">
+	{% assign sortedPosts = collections.news | sort: "date" | reverse %} {% for
+	post in sortedPosts %} {% if post.data.type == "article" %}
+
+	<a href="{{ post.url | url }}" class="project-link">
+		<div class="project-preview">
+			<div class="side-by-side-updates">
+				<svg
+					class="icon"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+				>
+					<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+					<path
+						d="M96 96c0-35.3 28.7-64 64-64l288 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L80 480c-44.2 0-80-35.8-80-80L0 128c0-17.7 14.3-32 32-32s32 14.3 32 32l0 272c0 8.8 7.2 16 16 16s16-7.2 16-16L96 96zm64 24l0 80c0 13.3 10.7 24 24 24l112 0c13.3 0 24-10.7 24-24l0-80c0-13.3-10.7-24-24-24L184 96c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16l48 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-48 0c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16l48 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-48 0c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-256 0c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16l256 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-256 0c-8.8 0-16 7.2-16 16z"
+					/>
+				</svg>
+				<div class="project-info">
+					<h2 class="project-title">{{ post.data.title }}</h2>
+					<p>{{ post.data.date | pacificDate }}</p>
+					<p class="project-description">
+						{{ post.data.description }}
+					</p>
+					<h3>Read More...</h3>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	{% elsif post.data.type == "tweet" %}
+	<div class="project-preview tweet-embed">
+		<div class="project-preview">
+			<div class="side-by-side-updates">
+				<div class="left-side">
+					<svg
+						class="icon"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+					>
+						<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+						<path
+							d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75l-8.7 0-32 0-96 0c-35.3 0-64 28.7-64 64l0 96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-128 8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-147.6c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4L480 32zm-64 76.7L416 240l0 131.3C357.2 317.8 280.5 288 200.7 288l-8.7 0 0-96 8.7 0c79.8 0 156.5-29.8 215.3-83.3z"
+						/>
+					</svg>
+				</div>
+
+				<div class="project-info">
+					<h2 class="project-title">{{ post.data.title }}</h2>
+					<p>{{ post.data.date | pacificDate }}</p>
+
+					<div class="embed">{{ post.data.embed }}</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</a>
-{% endif %} {% endfor %}
+
+	{% elsif post.data.type == "video" %}
+	<a href="{{ post.url | url }}" class="project-link">
+		<div class="project-preview video-embed">
+			<div class="project-preview">
+				<div class="side-by-side-updates">
+					<svg
+						class="icon"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+					>
+						<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+						<path
+							d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"
+						/>
+					</svg>
+					<div class="project-info">
+						<h2 class="project-title">
+							{{ post.data.title }}
+						</h2>
+						<p>{{ post.data.date | pacificDate }}</p>
+
+						<p>
+							Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Atque, ea quae, dicta
+							facilis ad ex fugit explicabo temporibus
+							asperiores vel nobis facere officiis
+							molestias suscipit enim est corporis
+							exercitationem natus sunt. Debitis et
+							expedita adipisci itaque sequi animi dolorum!
+							Quia fugiat harum earum enim hic molestias
+							eligendi provident illo dolorum, rerum
+							veritatis laboriosam non magni eveniet. Sit
+							non doloribus esse?
+						</p>
+						<iframe
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/7gzI9n9OgPs?si=1Ot-Mg_iFqQanVap"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+						<h3>Read More...</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	{% endif %} {% endfor %}
+</div>

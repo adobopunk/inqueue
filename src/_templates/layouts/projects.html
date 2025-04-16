@@ -2,10 +2,11 @@
 layout: /layouts/base.html
 ---
 
-{% assign currentIndex = -1 %} {% for project in collections.news %} {% if
-project.url == page.url %} {% assign currentIndex = forloop.index0 %} {% endif
-%} {% endfor %} {% assign nextIndex = currentIndex | plus: 1 %} {% assign
-secondNextIndex = currentIndex | plus: 2 %}
+{% assign articles = collections.news | where: "data.type", "article" %} {%
+assign currentIndex = -1 %} {% for project in articles %} {% if project.url ==
+page.url %} {% assign currentIndex = forloop.index0 %} {% endif %} {% endfor %}
+{% assign nextIndex = currentIndex | plus: 1 %} {% assign secondNextIndex =
+currentIndex | plus: 2 %}
 
 <main id="main" class="project-main">
 	<div class="project-container" data-current-slug="{{ page.fileSlug }}">
@@ -16,10 +17,9 @@ secondNextIndex = currentIndex | plus: 2 %}
 					<div class="next-projects-container">
 						<h2 class="explore-more">Explore More</h2>
 
-						{% assign nextProject =
-						collections.news[nextIndex] %} {% if
-						nextProject == null %} {% assign nextProject =
-						collections.news[0] %} {% endif %}
+						{% assign nextProject = articles[nextIndex] %} {%
+						if nextProject == null %} {% assign nextProject =
+						articles[0] %} {% endif %}
 						<a
 							href="{{ nextProject.url | url }}"
 							class="next-project-link"
@@ -44,10 +44,9 @@ secondNextIndex = currentIndex | plus: 2 %}
 						</a>
 
 						{% assign secondNextProject =
-						collections.news[secondNextIndex] %} {% if
+						articles[secondNextIndex] %} {% if
 						secondNextProject == null %} {% assign
-						secondNextProject = collections.news[1] %} {%
-						endif %}
+						secondNextProject = articles[1] %} {% endif %}
 						<a
 							href="{{ secondNextProject.url | url }}"
 							class="next-project-link"

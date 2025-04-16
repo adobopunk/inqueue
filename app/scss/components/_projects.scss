@@ -27,7 +27,7 @@
 
 	&__wrapper {
 		min-height: 100vh;
-		width: clamp(350px, 75%, 1200px);
+		width: clamp(350px, 85%, 1600px);
 
 		@include u.breakpoint(medium) {
 			padding-inline: 5%;
@@ -204,6 +204,26 @@ figcaption {
 		flex-direction: column;
 		gap: u.rem(8);
 	}
+}
+
+.side-by-side-updates {
+	display: grid;
+	grid-template-columns: 1fr 12fr; /* first column is small, second is large */
+	gap: 20px; /* space between columns */
+	align-items: flex-start;
+	margin: 0 auto;
+
+	@include u.breakpoint-down(medium) {
+		display: flex;
+		flex-direction: column;
+		& > .icon {
+			display: none;
+		}
+	}
+}
+
+.icon {
+	margin-block: 5rem;
 }
 
 .side-by-side-text {
