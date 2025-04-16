@@ -33,7 +33,7 @@
 		{% if page.imagePath %}
 		<meta
 			property="og:image"
-			content="{% if page.imagePath contains 'http' %}{{ page.imagePath }}{% else %}{{ site.siteUrl }}/{{ page.imagePath }}{% endif %}"
+			content="{% if page.imagePath %}{{ page.imagePath }}{% else %}{{ site.siteUrl }}/{{ page.imagePath }}{% endif %}"
 		/>
 		{% else %}
 		<meta
