@@ -110,6 +110,7 @@
 
 		&:hover {
 			fill: var(--lilly-green);
+			animation: rainbow-glow-icon 4s linear infinite;
 		}
 	}
 

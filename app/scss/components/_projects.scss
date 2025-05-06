@@ -189,7 +189,7 @@ figcaption {
 }
 
 #values {
-	padding-bottom: 25vh;
+	// padding-bottom: 25vh;
 }
 
 .side-by-side {
@@ -200,7 +200,7 @@ figcaption {
 	// max-width: 1600px;
 	align-items: flex-start;
 	margin: 0 auto;
-	margin-block: u.rem(60);
+	// margin-block: u.rem(60);
 
 	@include u.breakpoint-down(medium) {
 		flex-direction: column;
@@ -319,7 +319,7 @@ figcaption {
 }
 
 .project__info {
-	margin-block: u.rem(60);
+	// margin-block: u.rem(60);
 
 	& > :first-child {
 		flex: 3; /* Takes 75% of the available space */

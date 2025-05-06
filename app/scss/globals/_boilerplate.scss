@@ -108,7 +108,8 @@ a {
 	&:hover {
 		text-decoration-thickness: 1px;
 		color: var(--lilly-green);
-		text-shadow: 0 0 20px hsl(195, 77%, 50%);
+		// text-shadow: 0 0 20px hsl(195, 77%, 50%);
+		animation: rainbow-glow 4s linear infinite;
 	}
 }
 
@@ -122,3 +123,4 @@ ul li {
 	padding-block: 15px; /* Adds spacing inside each list item */
 	font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
 }
+

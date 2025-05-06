@@ -73,12 +73,15 @@
 		font-size: u.rem(18);
 		align-self: center;
 		cursor: pointer;
-		margin-block: 0;
+		margin-block: u.rem(10);
+		filter: drop-shadow(0 0 0 transparent);
 
 		&:hover {
 			background-color: var(--murky-clouds);
 			// color: var(--murky-clouds);
 			filter: drop-shadow(0 0 20px hsla(0, 0%, 78%, 0.452));
+			// animation: rainbow-glow-button 4s linear infinite;
+			overflow: visible;
 		}
 	}
 }
