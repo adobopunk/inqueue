@@ -20,7 +20,7 @@
 	}
 
 	&__wrapper {
-		width: clamp(350px, 75%, 1200px);
+		width: clamp(350px, 75%, 1600px);
 
 		@include u.breakpoint(medium) {
 			padding-inline: 5%;
@@ -384,11 +384,11 @@
 		}
 	}
 
-	& .side-by-side {
-		@include u.breakpoint-down(large) {
-			flex-direction: column-reverse;
-		}
-	}
+	// & .side-by-side {
+	// 	@include u.breakpoint-down(large) {
+	// 		flex-direction: column-reverse;
+	// 	}
+	// }
 }
 
 .dont-show-small {
