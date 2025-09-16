@@ -1,0 +1,184 @@
+@use '../util' as u;
+
+/* Gallery SCSS — no black borders, no overlay/title on image,
+   title placed below image, subtle inward hover crop (no layout grow),
+   horizontal gallery margins. */
+
+.gallery {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: u.rem(32); /* space between items */
+	margin-block-end: 60px;
+	margin-inline: u.rem(24); /* added left/right margin for gallery */
+	padding: 0;
+
+	@include u.breakpoint(large) {
+		grid-template-columns: repeat(2, 1fr);
+		margin-inline: u.rem(40); /* larger side margins on wide screens */
+	}
+
+	&__item {
+		margin: 0;
+		display: block;
+	}
+
+	&__title {
+		font-size: 1rem;
+		color: var(--pico-primary);
+		margin-block: u.rem(12);
+		margin: 0; /* handled below by .image-title spacing */
+
+		&:hover {
+			color: var(--pico-primary-hover);
+		}
+	}
+
+	&__subtitle {
+		font-size: 1rem;
+		color: var(--pico-h1-color);
+	}
+
+	&__title,
+	&__subtitle {
+		display: block;
+
+		@include u.breakpoint-down(small) {
+			width: 100%;
+		}
+	}
+
+	&__intro {
+		max-width: 75ch;
+		text-align: left;
+	}
+}
+
+/* IMAGE + CONTAINER */
+.image-container,
+.image-preview-container {
+	position: relative;
+	width: 100%;
+	display: block;
+	background: transparent;
+	border-radius: 0;
+	overflow: hidden; /* important: contain the inward crop */
+}
+
+/* anchor wraps the image and handles hover transform */
+.image-container a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: transparent;
+	overflow: hidden; /* ensures image gets cropped inward, not bigger */
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+/* images: full width, keep aspect using block + object-fit */
+.gallery img,
+.image-preview-container img,
+.featured-gallery img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	object-fit: cover;
+	border-radius: 0; /* remove any rounded white border */
+	box-shadow: none; /* remove shadows that look like borders */
+	transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+		opacity 0.3s ease;
+	vertical-align: middle;
+	transform: translateZ(0); /* promote to composite layer */
+}
+
+/* Remove any overlay or title on the image: hide elements if present */
+.hover-overlay {
+	display: none !important;
+}
+
+/* Title below the image (.image-title). Visible on all pointers. */
+.image-title {
+	display: block;
+	color: var(--pico-h1-color);
+	text-align: left;
+	margin-top: u.rem(12);
+	margin-bottom: u.rem(8);
+	padding: 0;
+}
+
+.image-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.image-title .gallery__title {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin: 0;
+	line-height: 1.2;
+}
+
+.image-title .gallery__subtitle {
+	font-size: 0.95rem;
+	color: var(--pico-color);
+	margin-top: u.rem(6);
+}
+
+/* Hover effect: subtle inward push (scale up the image but crop via overflow hidden)
+   so layout doesn't grow — the image appears to push into its frame. */
+// @media (hover: hover) and (pointer: fine) {
+// 	.image-container a:hover img {
+// 		transform: scale(1.06);
+// 		/* keep the image visually cropped by the anchor's overflow:hidden */
+// 	}
+
+// 	/* optionally slightly darken the image on hover for emphasis (subtle) */
+// 	.image-container a:hover img {
+// 		filter: brightness(0.98);
+// 	}
+// }
+
+/* Ensure no borders or outlines appear around link/image */
+.image-container a,
+.image-container a:focus,
+.image-container a:active {
+	outline: none;
+	border: 0;
+}
+
+/* small tweaks for featured-gallery to match no-border style */
+.featured-gallery .featured-media-container,
+.featured-media {
+	border-radius: 0;
+	box-shadow: none;
+}
+
+/* Accessibility: when focused with keyboard, apply same inward crop */
+.image-container a:focus img,
+.image-container a:active img {
+	transform: scale(1.03);
+}
+
+/* Touch devices: remove hover transforms (avoid accidental movement) */
+@media (pointer: coarse) {
+	.image-container a:hover img,
+	.image-container a:focus img {
+		transform: none;
+	}
+}
+
+/* Optional: constrain image aspect ratio blocks so items align nicely */
+.gallery img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* Ensure links around titles remain accessible */
+.image-title a:focus,
+.image-title a:hover {
+	text-decoration: underline;
+}

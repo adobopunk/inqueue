@@ -1,9 +1,8 @@
 ---
-type: 'article'
-layout: 'layouts/projects.html'
-title: 'In Queue Launches: A Full-Service Esports Production and Operations Agency'
-description: 'Former BoomTV talent is teaming up to grow an esports environment where values come first and community is king.'
-imagePath: '/img/backgrounds/dark.jpg'
+layout: 'layouts/projects_new.html'
+title: 'Mazer Gives Back'
+
+imagePath: '/img/og-image.webp'
 featured: yes
 
 date: 2025-04-01T12:00:00-07:00

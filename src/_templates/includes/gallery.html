@@ -1,139 +1,29 @@
 <section class="gallery" id="gallery">
-    <div class="wrapper gallery__wrapper">
-        <div class="gallery__image-container">
-            <div class="gallery__image" data-title="Caldera Challenge">
-                <a
-                    href="/img/landing/gallery/caldera.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/caldera.png"
-                        alt="Image 1"
-                /></a>
+	<h2 class="visually-hidden">Gallery</h2>
 
-                <div class="image-overlay"></div>
-            </div>
+	{% for project in collections.projects %}
+	<div class="gallery__item">
+		<div class="image-container">
+			<a href="{{ project.url }}" class="video-link">
+				<img
+					src="{{ project.data.imagePath | default: '/assets/img/og-image.jpg' }}"
+					alt="Image for {{ project.data.title }}"
+					class="gallery__image"
+					loading="lazy"
+				/>
 
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/Reddysh-Endpage-AE.jpg"
-                    data-lightbox="gallery"
-                >
-                    <img
-                        src="/img/landing/gallery/Reddysh-Endpage-AE.jpg"
-                        alt="Image 2"
-                    />
-                </a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/valorant unleashed.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/valorant unleashed.png"
-                        alt="Image 3"
-                    />
-                </a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/splitgate.png"
-                    data-lightbox="gallery"
-                >
-                    <img
-                        src="/img/landing/gallery/splitgate.png"
-                        alt="Image 4"
-                /></a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/chica.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/chica.png"
-                        alt="Image 5"
-                    />
-                </a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/amika.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/amika.png"
-                        alt="Image 6"
-                    />
-                </a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/warzone.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/warzone.png"
-                        alt="Image 8"
-                    />
-                </a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/wild rift.png"
-                    data-lightbox="gallery"
-                >
-                    <img
-                        src="/img/landing/gallery/wild rift.png"
-                        alt="Image 7"
-                /></a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/gamepass.png"
-                    data-lightbox="gallery"
-                >
-                    <img
-                        src="/img/landing/gallery/gamepass.png"
-                        alt="Image 9"
-                /></a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/halo invitational.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/halo invitational.png"
-                        alt="Image 10"
-                    />
-                </a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/world classic.png"
-                    data-lightbox="gallery"
-                >
-                    <img
-                        src="/img/landing/gallery/world classic.png"
-                        alt="Image 11"
-                /></a>
-            </div>
-
-            <div class="gallery__image">
-                <a
-                    href="/img/landing/gallery/cracked.png"
-                    data-lightbox="gallery"
-                    ><img
-                        src="/img/landing/gallery/cracked.png"
-                        alt="Image 12"
-                    />
-                </a>
-            </div>
-        </div>
-    </div>
+				<div class="hover-overlay">
+					<p class="gallery__title no-animation">
+						<b>{{ project.data.title }}</b>
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="image-title">
+			<a href="{{ project.url }}">
+				<h2 class="gallery__title">{{ project.data.title }}</h2>
+			</a>
+		</div>
+	</div>
+	{% endfor %}
 </section>

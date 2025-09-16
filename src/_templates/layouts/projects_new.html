@@ -1,0 +1,19 @@
+---
+layout: /layouts/base.html
+---
+
+{% assign articles = collections.news | where: "data.type", "article" %} {%
+assign currentIndex = -1 %} {% for project in articles %} {% if project.url ==
+page.url %} {% assign currentIndex = forloop.index0 %} {% endif %} {% endfor %}
+{% assign nextIndex = currentIndex | plus: 1 %} {% assign secondNextIndex =
+currentIndex | plus: 2 %}
+
+<main id="main" class="project-main">
+	<div class="project-container" data-current-slug="{{ page.fileSlug }}">
+		<article class="project-content">
+			<section class="project">
+				<div class="wrapper project__wrapper">{{ content }}</div>
+			</section>
+		</article>
+	</div>
+</main>
