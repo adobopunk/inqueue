@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
     {% for page in collections.all %}
        {% if not page.data.draft %}
         <url>
-            <loc>{{ site.url }}{{ page.url | url }}</loc>
+            <loc>{{ site.siteUrl }}{{ page.url | url }}</loc>
             
             {% if page.date %}
              <lastmod>{{ page.date.toISOString() }}</lastmod>

@@ -8,7 +8,7 @@ page.url %} {% assign currentIndex = forloop.index0 %} {% endif %} {% endfor %}
 {% assign nextIndex = currentIndex | plus: 1 %} {% assign secondNextIndex =
 currentIndex | plus: 2 %}
 
-<main id="main" class="project-main">
+<div class="project-main">
 	<div class="project-container" data-current-slug="{{ page.fileSlug }}">
 		<article class="project-content">
 			<section class="project">
@@ -16,4 +16,4 @@ currentIndex | plus: 2 %}
 			</section>
 		</article>
 	</div>
-</main>
+</div>

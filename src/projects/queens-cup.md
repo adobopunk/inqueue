@@ -1,6 +1,7 @@
 ---
 layout: 'layouts/projects_new.html'
 title: "Queen's Cup"
+description: "Queen's Cup is a competitive Apex Legends series for women, produced by In Queue with RynoLive and Gaming Mpire."
 
 imagePath: '/img/og-image.webp'
 featured: yes

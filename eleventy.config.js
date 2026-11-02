@@ -1,6 +1,5 @@
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('assets');
-	eleventyConfig.addPassthroughCopy('fonts');
 	eleventyConfig.addPassthroughCopy('img');
 	eleventyConfig.addPassthroughCopy('app');
 	eleventyConfig.addPassthroughCopy('robots.txt');

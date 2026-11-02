@@ -1,6 +1,7 @@
 ---
 layout: 'layouts/projects_new.html'
 title: 'Mazer Gives Back'
+description: 'Mazer Gives Back is a charity Apex Legends tournament In Queue produced with Mazer for hurricane relief.'
 
 imagePath: '/img/og-image.webp'
 featured: yes

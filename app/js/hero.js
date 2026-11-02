@@ -33,12 +33,15 @@ function animate() {
 	requestAnimationFrame(animate);
 }
 
-setTimeout(animate, 1000); // delay the animation by 500ms
+// Only runs on pages that have the rotating title
+if (textObject) setTimeout(animate, 1000);
 
 // Scroll-based movement for .bg-text-hero
 const bgTextHero = document.querySelector('.bg-text-hero');
 
 function handleScroll() {
+	if (!bgTextHero) return;
+
 	// Get the current scroll position
 	const scrollPosition = window.scrollY;
 
