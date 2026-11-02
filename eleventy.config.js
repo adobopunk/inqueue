@@ -3,6 +3,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('img');
 	eleventyConfig.addPassthroughCopy('app');
 	eleventyConfig.addPassthroughCopy('robots.txt');
+	// Netlify redirects for pages the redesign folded into the homepage
+	eleventyConfig.addPassthroughCopy({ 'src/_redirects': '_redirects' });
 
 	eleventyConfig.addCollection('news', function (collectionApi) {
 		return collectionApi
@@ -31,10 +33,6 @@ module.exports = function (eleventyConfig) {
 			});
 	});
 
-	// Add a collection for projects
-	eleventyConfig.addCollection('projects', function (collectionApi) {
-		return collectionApi.getFilteredByGlob('src/projects/*.md');
-	});
 
 	eleventyConfig.addFilter('pacificDate', function (date) {
 		// Create a new date object with the provided date

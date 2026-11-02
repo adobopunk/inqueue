@@ -1,0 +1,17 @@
+# Pages folded into the homepage by the redesign
+/about           /                                        301
+/about/          /                                        301
+/contact         /#contact                                301
+/contact/        /#contact                                301
+/meet-cory       /#team                                   301
+/meet-cory/      /#team                                   301
+/meet-tj         /#team                                   301
+/meet-tj/        /#team                                   301
+/meet-mateo      /#team                                   301
+/meet-mateo/     /#team                                   301
+# Unfinished project pages; the news posts cover these events
+/projects/queens-cup        /news/A_QueensCup2/                         301
+/projects/queens-cup/       /news/A_QueensCup2/                         301
+/projects/mazer-gives-back  /news/mazer-gives-back-results-highlights/  301
+/projects/mazer-gives-back/ /news/mazer-gives-back-results-highlights/  301
+/site.webmanifest           /assets/favicon/site.webmanifest            301

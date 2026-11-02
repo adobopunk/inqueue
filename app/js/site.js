@@ -1,4 +1,4 @@
-// Redesign draft: reveal-on-scroll, stat count-up, brand video modal, copy-to-clipboard email
+// Reveal-on-scroll, stat count-up, brand video modal, copy-to-clipboard email
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -39,7 +39,15 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 		},
 		{ rootMargin: '0px 0px -10% 0px' }
 	);
-	revealEls.forEach((el) => observer.observe(el));
+	revealEls.forEach((el) => {
+		// Anything already on screen shows right away, without waiting on the observer
+		if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+			el.classList.add('is-visible');
+			el.querySelectorAll('[data-count]').forEach((stat, i) => countUp(stat, 200 + i * 350));
+		} else {
+			observer.observe(el);
+		}
+	});
 } else {
 	revealEls.forEach((el) => el.classList.add('is-visible'));
 }
