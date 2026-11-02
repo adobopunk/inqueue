@@ -748,11 +748,6 @@ ol {
 	margin-top: 40px;
 }
 
-.follow {
-	color: var(--grey-300);
-	margin-top: 32px;
-}
-
 @media (min-width: 700px) {
 	.page-head h1 {
 		font-size: 64px;
@@ -1041,12 +1036,15 @@ ol {
 	margin-right: 16px;
 }
 
-.site-footer__social {
+.site-footer__social,
+.social-icons {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 4px;
 }
 
-.site-footer__social a {
+.site-footer__social a,
+.social-icons a {
 	display: grid;
 	place-items: center;
 	width: 44px;
@@ -1056,7 +1054,8 @@ ol {
 	transition: color 150ms ease, background-color 150ms ease;
 }
 
-.site-footer__social a:hover {
+.site-footer__social a:hover,
+.social-icons a:hover {
 	color: #fff;
 	background: var(--grey-800);
 }
