@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	const iframe = document.querySelector(
 		'#showreel-overlay .vimeo-container iframe'
 	);
-	const player = new Vimeo.Player(iframe);
 	const overlayContent = document.querySelector('.overlay-content');
 
 	function openOverlay() {
+		// Load the video only when the pop-up opens
+		iframe.src = iframe.dataset.src;
 		overlay.classList.add('reelon');
 		overlay.style.display = 'flex';
 		setTimeout(() => {
 			overlay.style.opacity = '1';
-			player.play();
 		}, 10);
 	}
 
@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			function () {
 				overlay.classList.remove('reelon');
 				overlay.style.display = 'none';
-				player
-					.setCurrentTime(0)
-					.then(() => player.pause())
-					.catch(console.error);
+				// Unloading the embed stops playback
+				iframe.removeAttribute('src');
 			},
 			{ once: true }
 		);

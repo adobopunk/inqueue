@@ -39,21 +39,7 @@ date: 2025-04-01T12:00:00-07:00
 </p>
 
 <figure>
-	<div style="padding: 41.8% 0 0 0; position: relative">
-		<iframe
-			src="https://player.vimeo.com/video/1071325363?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-			frameborder="0"
-			allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-			style="
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			"
-			title="In Queue | Brand Launch"
-		></iframe>
-	</div>
+	<div style="position:relative;padding-top:56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/418879/263ba35c-b198-4137-85ca-b1ee39531186?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true" title="In Queue brand launch trailer"></iframe></div>
 	<figcaption>In Queue's Brand Launch Trailer</figcaption>
 </figure>
 
@@ -141,4 +127,3 @@ date: 2025-04-01T12:00:00-07:00
 	The queue is forming. The stage is set. All that's missing is you. Join us,
 	compete with us, and help build what's next. See you on the leaderboards.
 </p>
-<script src="https://player.vimeo.com/api/player.js"></script>
