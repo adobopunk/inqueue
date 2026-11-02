@@ -1,7 +1,36 @@
 ---
-layout: 'layouts/base.html'
-title: 'News & Announcements | The In Queue Perspective'
+layout: layouts/base.html
+title: 'News & Announcements | In Queue'
 description: 'News and announcements from In Queue: tournaments, partnerships and event results.'
 ---
 
-{% include "includes/news.html" %}
+<section class="section page-head">
+	<div class="container">
+		<h1>News</h1>
+		<p class="page-head__lede">Tournaments, partnerships and event results from In Queue.</p>
+	</div>
+</section>
+
+<section class="section section--flush" aria-label="All posts">
+	<div class="container">
+		<ul class="news-list reveal">
+			{% assign posts = collections.news | sort: "date" | reverse %}{% for post in posts %}
+			<li class="news-card">
+				<a href="{{ post.url }}">
+					<img
+						src="{% if post.data.imagePath %}{{ post.data.imagePath }}{% else %}/img/og-image.webp{% endif %}"
+						alt=""
+						width="640"
+						height="360"
+						{% if forloop.index > 3 %}loading="lazy"{% endif %}
+						decoding="async"
+					/>
+					<p class="news-card__date">{{ post.date | pacificDate }}</p>
+					<h2>{{ post.data.title }}</h2>
+					{% if post.data.description %}<p class="news-card__desc">{{ post.data.description }}</p>{% endif %}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

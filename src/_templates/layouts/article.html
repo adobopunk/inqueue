@@ -1,0 +1,35 @@
+---
+layout: layouts/base.html
+---
+
+<article class="article">
+	<header class="article__head container">
+		<p class="article__back"><a href="/news/">All news</a></p>
+		<p class="article__date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | pacificDate }}</time></p>
+		<h1>{{ title }}</h1>
+		{% if description %}<p class="article__lede">{{ description }}</p>{% endif %}
+	</header>
+	<div class="article__body container reveal">
+		{% if embed %}<div class="article__embed">{{ embed }}</div>{% endif %}
+		{{ content }}
+	</div>
+	<aside class="article__cta container" aria-labelledby="article-cta-title">
+		<h2 id="article-cta-title">Run your next event with In Queue</h2>
+		<p>Tell us about your brand and what you'd like to do, and we'll follow up to talk it through.</p>
+		<a class="btn btn--primary" href="/#contact">Partner with us</a>
+	</aside>
+	{% assign others = collections.news | sort: "date" | reverse %}
+	<nav class="article__more container" aria-labelledby="more-news-title">
+		<h2 id="more-news-title">More news</h2>
+		<ul class="news-list news-list--compact">
+			{% assign shown = 0 %}{% for post in others %}{% if post.url != page.url and shown < 3 %}{% assign shown = shown | plus: 1 %}
+			<li class="news-card">
+				<a href="{{ post.url }}">
+					<p class="news-card__date">{{ post.date | pacificDate }}</p>
+					<h3>{{ post.data.title }}</h3>
+				</a>
+			</li>
+			{% endif %}{% endfor %}
+		</ul>
+	</nav>
+</article>

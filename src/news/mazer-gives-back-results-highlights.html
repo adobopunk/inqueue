@@ -1,6 +1,6 @@
 ---
 type: 'article'
-layout: 'layouts/projects.html'
+layout: 'layouts/article.html'
 title: 'Mazer Gives Back 14: Results & Highlights'
 description: 'The community came out strong for Mazer’s charity Apex event. '
 imagePath: '/img/events/mazer-gives-back-14/leaderboard.webp'
@@ -9,11 +9,8 @@ featured: yes
 date: 2025-04-16T22:00:00-07:00
 ---
 
-<h1>{{ title }}</h1>
 
-<h3>{{ description }}</h3>
 
-<p class="small">{{ date | pacificDate }}</p>
 <figure><img src="{{ imagePath }}" alt="" />
 
 	<figcaption><a href="https://t.co/YiYg1CcIUe" target="_blank">Full Leaderboard on Overstat.gg</a></figcaption>
@@ -28,171 +25,140 @@ date: 2025-04-16T22:00:00-07:00
 </p>
 <h2>Final Placements</h2>
 
-<div style="overflow-x: auto">
-	<table
-		style="
-			width: 100%;
-			border-collapse: collapse;
-			margin: 1em 0;
-			max-width: 600px;
-		"
-	>
+<div class="table-scroll">
+	<table>
 		<thead>
-			<tr style="background-color: #2e2e2e">
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+			<tr>
+				<th>
 					Placement
 				</th>
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+				<th>
 					Team
 				</th>
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+				<th>
 					Score
 				</th>
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+				<th>
 					Kills
 				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">1st</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Liquid Alienware</td>
-				<td style="padding: 10px; border: 1px solid #ddd">90</td>
-				<td style="padding: 10px; border: 1px solid #ddd">50</td>
+				<td>1st</td>
+				<td>Liquid Alienware</td>
+				<td>90</td>
+				<td>50</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">2nd</td>
-				<td style="padding: 10px; border: 1px solid #ddd">
+				<td>2nd</td>
+				<td>
 					Corinthians Esports
 				</td>
-				<td style="padding: 10px; border: 1px solid #ddd">64</td>
-				<td style="padding: 10px; border: 1px solid #ddd">33</td>
+				<td>64</td>
+				<td>33</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">3rd</td>
-				<td style="padding: 10px; border: 1px solid #ddd">CAT</td>
-				<td style="padding: 10px; border: 1px solid #ddd">57</td>
-				<td style="padding: 10px; border: 1px solid #ddd">35</td>
+				<td>3rd</td>
+				<td>CAT</td>
+				<td>57</td>
+				<td>35</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">4th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">REPLY TOTEM</td>
-				<td style="padding: 10px; border: 1px solid #ddd">57</td>
-				<td style="padding: 10px; border: 1px solid #ddd">29</td>
+				<td>4th</td>
+				<td>REPLY TOTEM</td>
+				<td>57</td>
+				<td>29</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">5th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Forbidden Gaming</td>
-				<td style="padding: 10px; border: 1px solid #ddd">56</td>
-				<td style="padding: 10px; border: 1px solid #ddd">31</td>
+				<td>5th</td>
+				<td>Forbidden Gaming</td>
+				<td>56</td>
+				<td>31</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">6th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">pathogen</td>
-				<td style="padding: 10px; border: 1px solid #ddd">54</td>
-				<td style="padding: 10px; border: 1px solid #ddd">26</td>
+				<td>6th</td>
+				<td>pathogen</td>
+				<td>54</td>
+				<td>26</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">7th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Flat</td>
-				<td style="padding: 10px; border: 1px solid #ddd">49</td>
-				<td style="padding: 10px; border: 1px solid #ddd">29</td>
+				<td>7th</td>
+				<td>Flat</td>
+				<td>49</td>
+				<td>29</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">8th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">HUSS</td>
-				<td style="padding: 10px; border: 1px solid #ddd">48</td>
-				<td style="padding: 10px; border: 1px solid #ddd">24</td>
+				<td>8th</td>
+				<td>HUSS</td>
+				<td>48</td>
+				<td>24</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">9th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">NAVI</td>
-				<td style="padding: 10px; border: 1px solid #ddd">47</td>
-				<td style="padding: 10px; border: 1px solid #ddd">29</td>
+				<td>9th</td>
+				<td>NAVI</td>
+				<td>47</td>
+				<td>29</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">10th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">UAIM</td>
-				<td style="padding: 10px; border: 1px solid #ddd">45</td>
-				<td style="padding: 10px; border: 1px solid #ddd">22</td>
+				<td>10th</td>
+				<td>UAIM</td>
+				<td>45</td>
+				<td>22</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">11th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">SJP2</td>
-				<td style="padding: 10px; border: 1px solid #ddd">40</td>
-				<td style="padding: 10px; border: 1px solid #ddd">21</td>
+				<td>11th</td>
+				<td>SJP2</td>
+				<td>40</td>
+				<td>21</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">12th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Specter Esports</td>
-				<td style="padding: 10px; border: 1px solid #ddd">39</td>
-				<td style="padding: 10px; border: 1px solid #ddd">15</td>
+				<td>12th</td>
+				<td>Specter Esports</td>
+				<td>39</td>
+				<td>15</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">13th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Term Inferno</td>
-				<td style="padding: 10px; border: 1px solid #ddd">37</td>
-				<td style="padding: 10px; border: 1px solid #ddd">21</td>
+				<td>13th</td>
+				<td>Term Inferno</td>
+				<td>37</td>
+				<td>21</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">14th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Solis</td>
-				<td style="padding: 10px; border: 1px solid #ddd">31</td>
-				<td style="padding: 10px; border: 1px solid #ddd">22</td>
+				<td>14th</td>
+				<td>Solis</td>
+				<td>31</td>
+				<td>22</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">15th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">SZA</td>
-				<td style="padding: 10px; border: 1px solid #ddd">24</td>
-				<td style="padding: 10px; border: 1px solid #ddd">10</td>
+				<td>15th</td>
+				<td>SZA</td>
+				<td>24</td>
+				<td>10</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">16th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">US Army Esports</td>
-				<td style="padding: 10px; border: 1px solid #ddd">21</td>
-				<td style="padding: 10px; border: 1px solid #ddd">4</td>
+				<td>16th</td>
+				<td>US Army Esports</td>
+				<td>21</td>
+				<td>4</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">17th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">MPIRE Gaming</td>
-				<td style="padding: 10px; border: 1px solid #ddd">18</td>
-				<td style="padding: 10px; border: 1px solid #ddd">12</td>
+				<td>17th</td>
+				<td>MPIRE Gaming</td>
+				<td>18</td>
+				<td>12</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">18th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Infinite</td>
-				<td style="padding: 10px; border: 1px solid #ddd">16</td>
-				<td style="padding: 10px; border: 1px solid #ddd">11</td>
+				<td>18th</td>
+				<td>Infinite</td>
+				<td>16</td>
+				<td>11</td>
 			</tr>
 			<tr>
-				<td style="padding: 10px; border: 1px solid #ddd">19th</td>
-				<td style="padding: 10px; border: 1px solid #ddd">Los Lics</td>
-				<td style="padding: 10px; border: 1px solid #ddd">15</td>
-				<td style="padding: 10px; border: 1px solid #ddd">6</td>
+				<td>19th</td>
+				<td>Los Lics</td>
+				<td>15</td>
+				<td>6</td>
 			</tr>
 			
 		</tbody>
@@ -200,78 +166,53 @@ date: 2025-04-16T22:00:00-07:00
 </div>
 <h2>Prizing Awarded</h2>
 
-<div style="overflow-x: auto">
-	<table
-		style="
-			width: 100%;
-			border-collapse: collapse;
-			margin: 1em 0;
-			max-width: 700px;
-		"
-	>
+<div class="table-scroll">
+	<table>
 		<thead>
-			<tr style="background-color: #2e2e2e">
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+			<tr>
+				<th>
 					Award
 				</th>
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+				<th>
 					Recipient
 				</th>
-				<th
-					style="
-						padding: 10px;
-						border: 1px solid #ddd;
-						text-align: left;
-					"
-				>
+				<th>
 					Prize
 				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr></tr>
-				<td style="padding: 12px; border: 1px solid #ddd">
+				<td>
 					🥇 1st Place
 				</td>
-				<td style="padding: 12px; border: 1px solid #ddd">Liquid Alienware</td>
-				<td style="padding: 12px; border: 1px solid #ddd">$480</td>
+				<td>Liquid Alienware</td>
+				<td>$480</td>
 			</tr>
 			<tr>
-				<td style="padding: 12px; border: 1px solid #ddd">
+				<td>
 					🥈 2nd Place
 				</td>
-				<td style="padding: 12px; border: 1px solid #ddd">
+				<td>
 					Corinthians Esports
 				</td>
-				<td style="padding: 12px; border: 1px solid #ddd">$240</td>
+				<td>$240</td>
 			</tr>
 			<tr>
-				<td style="padding: 12px; border: 1px solid #ddd">
+				<td>
 					🥉 3rd Place
 				</td>
-				<td style="padding: 12px; border: 1px solid #ddd">HUSS</td>
-				<td style="padding: 12px; border: 1px solid #ddd">$180</td>
+				<td>HUSS</td>
+				<td>$180</td>
 			</tr>
 			<tr>
-				<td style="padding: 12px; border: 1px solid #ddd">
+				<td>
 					🎯 Kill Leader
 				</td>
-				<td style="padding: 12px; border: 1px solid #ddd">
+				<td>
 					TLAW KUREV
 				</td>
-				<td style="padding: 12px; border: 1px solid #ddd">$50</td>
+				<td>$50</td>
 			</tr>
 
 		</tbody>
@@ -335,4 +276,3 @@ date: 2025-04-16T22:00:00-07:00
 
 <p>Huge shoutout to all the players, Mazer, and everyone who tuned in for making our debut event such a success. This is just the beginning for In Queue — stay tuned for The Queen’s Cup next week, and more action coming soon!
 </p>
-{% include "includes/social-plug.html" %}
