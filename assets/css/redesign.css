@@ -10,12 +10,9 @@
 	--grey-300: hsl(30, 5%, 74%);
 	--grey-100: hsl(30, 8%, 94%);
 
-	/* Accent: the orange icon variant, plus the other three for the values */
+	/* Accent: the orange icon variant */
 	--orange-500: hsl(34, 95%, 56%);
 	--orange-300: hsl(34, 95%, 72%);
-	--cyan-500: hsl(193, 75%, 55%);
-	--pink-500: hsl(343, 85%, 62%);
-	--silver-500: hsl(220, 20%, 80%);
 
 	--font: 'Gothic A1', -apple-system, 'Segoe UI', Roboto, sans-serif;
 
@@ -233,19 +230,50 @@ ol {
 	}
 }
 
-/* Hero */
+/* Hero: full-width background video, text over a dark shade */
 .hero {
-	padding: 48px 0 64px;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	min-height: min(88vh, 820px);
+	padding: 96px 0 64px;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.hero__video {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -2;
+}
+
+.hero__shade {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background:
+		linear-gradient(to top, var(--grey-950) 0%, hsla(30, 6%, 6%, 0.85) 30%, hsla(30, 6%, 6%, 0.35) 70%, hsla(30, 6%, 6%, 0.55) 100%),
+		linear-gradient(to right, hsla(30, 6%, 6%, 0.8) 0%, transparent 70%);
+}
+
+/* Faint scanlines over the video */
+.hero__shade::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(to bottom, hsla(0, 0%, 100%, 0.035) 0 1px, transparent 1px 4px);
 }
 
 .hero__inner {
-	display: grid;
-	gap: 40px;
-	align-items: center;
+	width: 100%;
 }
 
 .hero__title {
 	font-size: 40px;
+	max-width: 15ch;
 	margin-bottom: 24px;
 }
 
@@ -262,28 +290,66 @@ ol {
 	gap: 12px;
 }
 
-.hero__media video {
-	width: 100%;
-	aspect-ratio: 4 / 3;
-	object-fit: cover;
-	border-radius: var(--radius-lg);
-	border: 1px solid var(--grey-800);
+.hero__actions .btn svg {
+	margin-right: 8px;
 }
 
 @media (min-width: 900px) {
 	.hero {
-		padding: 80px 0 96px;
-	}
-	.hero__inner {
-		grid-template-columns: 7fr 5fr;
-		gap: 64px;
+		padding: 128px 0 96px;
 	}
 	.hero__title {
-		font-size: 60px;
+		font-size: 68px;
 	}
-	.hero__media video {
-		aspect-ratio: 4 / 5;
-	}
+}
+
+/* Brand video modal */
+.video-modal {
+	width: min(1200px, calc(100vw - 32px));
+	max-width: none;
+	padding: 0;
+	border: 0;
+	background: #000;
+	overflow: visible;
+}
+
+.video-modal::backdrop {
+	background: hsla(30, 6%, 3%, 0.88);
+}
+
+.video-modal__frame {
+	position: relative;
+	padding-top: 41.8%; /* 2.39:1, the video's own shape */
+	background: #000;
+	overflow: hidden;
+}
+
+.video-modal__frame iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+
+.video-modal__close {
+	position: absolute;
+	right: 0;
+	bottom: calc(100% + 8px);
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+}
+
+.video-modal__close:hover {
+	background: var(--grey-800);
 }
 
 /* Games strip */
@@ -511,27 +577,19 @@ ol {
 }
 
 .value {
-	border-left: 4px solid var(--silver-500);
 	background: var(--grey-900);
-	border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-	padding: 24px 28px;
+	border-radius: var(--radius-lg);
+	padding: 28px;
+	box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.06);
 }
 
-.value p {
+.value p:not(.card__num) {
 	color: var(--grey-300);
 	margin: 0;
 }
 
-.value--2 {
-	border-color: var(--orange-500);
-}
-
-.value--3 {
-	border-color: var(--cyan-500);
-}
-
-.value--4 {
-	border-color: var(--pink-500);
+.value .card__num {
+	margin-bottom: 16px;
 }
 
 /* Team */
@@ -546,12 +604,6 @@ ol {
 	}
 }
 
-.person a {
-	display: block;
-	color: inherit;
-	text-decoration: none;
-}
-
 .person img {
 	width: 100%;
 	max-width: 280px;
@@ -562,13 +614,46 @@ ol {
 	margin-bottom: 4px;
 }
 
-.person a:hover h3 {
-	color: var(--orange-300);
-}
-
 .person p {
 	color: var(--grey-300);
 	font-size: 16px;
+}
+
+/* Click-to-copy email */
+.copy-email {
+	display: inline-grid;
+	gap: 2px;
+	text-align: left;
+	padding: 12px 16px;
+	background: var(--grey-800);
+	border: 2px solid var(--grey-700);
+	border-radius: var(--radius-sm);
+	color: #fff;
+	font: inherit;
+	cursor: pointer;
+	transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.copy-email:hover {
+	border-color: var(--orange-500);
+}
+
+.copy-email__addr {
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.copy-email__status {
+	font-size: 13px;
+	color: var(--grey-500);
+}
+
+.copy-email.is-copied {
+	border-color: var(--orange-500);
+}
+
+.copy-email.is-copied .copy-email__status {
+	color: var(--orange-300);
 }
 
 /* Contact */
@@ -668,10 +753,125 @@ ol {
 	color: #fff;
 }
 
+/* Load and scroll animations. Hidden states only apply when JS runs. */
+@media (prefers-reduced-motion: no-preference) {
+	/* Hero title wipes in left to right, like a loading bar */
+	@keyframes wipe {
+		from {
+			clip-path: inset(0 100% 0 0);
+		}
+		to {
+			clip-path: inset(0 0 0 0);
+		}
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	@keyframes scan {
+		from {
+			transform: translateY(-100%);
+		}
+		to {
+			transform: translateY(100vh);
+		}
+	}
+
+	.hero__title {
+		animation: wipe 900ms cubic-bezier(0.7, 0, 0.2, 1) both;
+	}
+
+	.hero__lede {
+		animation: rise 600ms ease-out 500ms both;
+	}
+
+	.hero__actions {
+		animation: rise 600ms ease-out 650ms both;
+	}
+
+	/* One bright line sweeps down the hero on load */
+	.hero__shade::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: 2px;
+		background: linear-gradient(to right, transparent, var(--orange-500), transparent);
+		opacity: 0.7;
+		animation: scan 1400ms ease-in 200ms both;
+	}
+
+	.js .reveal {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 600ms ease-out, transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+
+	.js .reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+
+	/* Cards and list items step in one after another */
+	.js .reveal > li,
+	.js .reveal > div {
+		opacity: 0;
+		transform: translateX(-12px);
+		transition: opacity 450ms ease-out, transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+
+	.js .reveal.is-visible > li,
+	.js .reveal.is-visible > div {
+		opacity: 1;
+		transform: none;
+	}
+
+	.js .reveal.is-visible > :nth-child(2) { transition-delay: 100ms; }
+	.js .reveal.is-visible > :nth-child(3) { transition-delay: 200ms; }
+	.js .reveal.is-visible > :nth-child(4) { transition-delay: 300ms; }
+	.js .reveal.is-visible > :nth-child(5) { transition-delay: 400ms; }
+
+	/* Stat underline fills as each number counts */
+	.stats div {
+		position: relative;
+	}
+
+	.stats div::before {
+		content: '';
+		position: absolute;
+		top: -2px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: var(--orange-500);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 1200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+
+	.js .stats.is-visible div::before {
+		transform: scaleX(1);
+	}
+
+	.js .stats.is-visible div:nth-child(2)::before { transition-delay: 350ms; }
+	.js .stats.is-visible div:nth-child(3)::before { transition-delay: 700ms; }
+	.js .stats.is-visible div:nth-child(4)::before { transition-delay: 1050ms; }
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
 	*::after {
+		animation-duration: 0.01ms !important;
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
